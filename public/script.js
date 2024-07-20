@@ -34,11 +34,3 @@ mobileMenu.addEventListener("click", () => {
     ? body.classList.add("no-scroll")
     : body.classList.remove("no-scroll");
 });
-
-// searchBtn.addEventListener("click", () => {
-//   toggleFunc(mobileFormContainer, "mobile-form-container-visible");
-// });
-
-// addProductBtn.addEventListener("click", () => {
-//   toggleFunc(addProductBtn, "add-product-click");
-// });
