@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="/public/styles.css" />
+    <title>Products page</title>
+  </head>
+  <body>
+    <div id="products-page">
+      <header>
+        <div class="nav-container">
+          <nav>
+            <a href="#">
+              <div class="logo">
+                <img
+                  src="/public/svgs/shop-store-svgrepo-com.svg"
+                  alt="svg logo"
+                />
+                <div class="text">Store Manager</div>
+              </div>
+            </a>
+            <a href="#" class="mobile-menu">
+              <div></div>
+              <div></div>
+              <div></div>
+            </a>
+            <ul class="desktop-links">
+              <li>
+                <a href="#"
+                  ><img
+                    src="/public/svgs/product-service-campaign-item-svgrepo-com.svg"
+                    alt="dashboard logo"
+                  />
+                  <div>Products</div>
+                </a>
+              </li>
+              <li>
+                <a href="#"
+                  ><img
+                    src="/public/svgs/verification-svgrepo-com.svg"
+                    alt="dashboard logo"
+                  />
+                  <div>Sales</div>
+                </a>
+              </li>
+              <li>
+                <a href="#"
+                  ><img
+                    src="/public/svgs/users-svgrepo-com.svg"
+                    alt="dashboard logo"
+                  />
+                  <div>Customers</div>
+                </a>
+              </li>
+              <li>
+                <a href="#"
+                  ><img
+                    src="/public/svgs/users-svgrepo-com.svg"
+                    alt="dashboard logo"
+                  />
+                  <div>Users</div>
+                </a>
+              </li>
+            </ul>
+            <div class="user-profile">
+              <img
+                src="https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png"
+                alt="user-image"
+              />
+              <div>John Doe</div>
+              <i class="fa fa-caret-down" id="dropdown" aria-hidden="true"></i>
+            </div>
+            <div id="user-options" class="user-options user-options-hidden">
+              <a href="login.html">logout</a>
+            </div>
+          </nav>
+        </div>
+      </header>
+      <div class="mobile-menu-links">
+        <div class="user-profile-mobile">
+          <img
+            src="https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png"
+            alt="user-image-mobile"
+          />
+          <div class="user-div">
+            <div>John Doe</div>
+            <i
+              class="fa fa-caret-down"
+              id="dropdown-mobile"
+              aria-hidden="true"
+            ></i>
+          </div>
+        </div>
+        <div id="user-options-mobile" class="user-options-mobile">
+          <a href="login.html">logout</a>
+        </div>
+        <ul class="mobile-links">
+          <li>
+            <a href="#">
+              <div class="nav-item">
+                <img
+                  src="/public/svgs/product-service-campaign-item-svgrepo-com.svg"
+                  alt="dashboard logo"
+                />
+                <div>Products</div>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <div class="nav-item">
+                <img
+                  src="/public/svgs/verification-svgrepo-com.svg"
+                  alt="dashboard logo"
+                />
+                <div>Sales</div>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <div class="nav-item">
+                <img
+                  src="/public/svgs/users-svgrepo-com.svg"
+                  alt="dashboard logo"
+                />
+                <div>Customers</div>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <div class="nav-item">
+                <img
+                  src="/public/svgs/users-svgrepo-com.svg"
+                  alt="dashboard logo"
+                />
+                <div>Users</div>
+              </div>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <section id="products-section">
+        <div class="products-container">
+          <div class="manage-products">
+            <h2>Products</h2>
+            <div class="mobile-products">
+              <!-- <button class="search-btn">
+                <img
+                  src="/public/svgs/search-svgrepo-com.svg"
+                  alt="search-btn"
+                />
+              </button> -->
+              <button class="add-btn">
+                <img src="/public/svgs/plus-svgrepo-com.svg" alt="add-btn" />
+              </button>
+            </div>
+            <div class="desktop-products">
+              <form id="search" class="desktop-form">
+                <input
+                  type="search"
+                  id="search"
+                  name="search"
+                  class="desktop-input"
+                  placeholder="Search product"
+                />
+              </form>
+              <button id="add-product">
+                Add New Product <i class="fa fa-plus" aria-hidden="true"></i>
+              </button>
+            </div>
+          </div>
+          <div class="mobile-form-container">
+            <form id="search" class="mobile-form">
+              <input
+                type="search"
+                id="search"
+                name="search"
+                class="mobile-input"
+                placeholder="Search product"
+              />
+            </form>
+          </div>
+          <div class="products-display-container">
+            <div class="products-display">
+              <div class="item">
+                <div class="img-div">
+                  <img src="/public/images/Nike shoe.jpg" alt="nike shoe" />
+                </div>
+                <div class="info">
+                  <h5>Nike Dunk High</h5>
+                  <p class="p-small">$130</p>
+                  <div class="inventory">
+                    <div class="inventory-child">
+                      <p class="p-small">stock</p>
+                      <h6>975</h6>
+                    </div>
+                    <div class="inventory-child">
+                      <p class="p-small">sold</p>
+                      <h6>768</h6>
+                    </div>
+                  </div>
+                </div>
+                <div class="product-card">
+                  <div class="card-header">
+                    <img
+                      src="/public/svgs/rhombus-svgrepo-com.svg"
+                      alt="rhombus"
+                    />
+                    <p class="text-small">productCard</p>
+                    <img
+                      src="/public/svgs/caret-down-thin-svgrepo-com.svg"
+                      alt="caret-down"
+                    />
+                  </div>
+                  <div class="info-container">
+                    <div class="info-details">
+                      <p class="info-text">productName</p>
+                      <p class="info-text">productPrice</p>
+                      <p class="info-text">stockTotal</p>
+                      <p class="info-text">productSold</p>
+                    </div>
+                    <div class="info-details">
+                      <p class="text-small">Nike Dunk High</p>
+                      <p class="text-small">$130</p>
+                      <p class="text-small">975</p>
+                      <p class="text-small">768</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="img-div">
+                  <img src="/public/images/Nike shoe.jpg" alt="nike shoe" />
+                </div>
+                <div class="info">
+                  <h5>Nike Dunk High</h5>
+                  <p class="p-small">$130</p>
+                  <div class="inventory">
+                    <div class="inventory-child">
+                      <p class="p-small">stock</p>
+                      <h6>975</h6>
+                    </div>
+                    <div class="inventory-child">
+                      <p class="p-small">sold</p>
+                      <h6>768</h6>
+                    </div>
+                  </div>
+                </div>
+                <div class="product-card">
+                  <div class="card-header">
+                    <img
+                      src="/public/svgs/rhombus-svgrepo-com.svg"
+                      alt="rhombus"
+                    />
+                    <p class="text-small">productCard</p>
+                    <img
+                      src="/public/svgs/caret-down-thin-svgrepo-com.svg"
+                      alt="caret-down"
+                    />
+                  </div>
+                  <div class="info-container">
+                    <div class="info-details">
+                      <p class="info-text">productName</p>
+                      <p class="info-text">productPrice</p>
+                      <p class="info-text">stockTotal</p>
+                      <p class="info-text">productSold</p>
+                    </div>
+                    <div class="info-details">
+                      <p class="text-small">Nike Dunk High</p>
+                      <p class="text-small">$130</p>
+                      <p class="text-small">975</p>
+                      <p class="text-small">768</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="img-div">
+                  <img src="/public/images/Nike shoe.jpg" alt="nike shoe" />
+                </div>
+                <div class="info">
+                  <h5>Nike Dunk High</h5>
+                  <p class="p-small">$130</p>
+                  <div class="inventory">
+                    <div class="inventory-child">
+                      <p class="p-small">stock</p>
+                      <h6>975</h6>
+                    </div>
+                    <div class="inventory-child">
+                      <p class="p-small">sold</p>
+                      <h6>768</h6>
+                    </div>
+                  </div>
+                </div>
+                <div class="product-card">
+                  <div class="card-header">
+                    <img
+                      src="/public/svgs/rhombus-svgrepo-com.svg"
+                      alt="rhombus"
+                    />
+                    <p class="text-small">productCard</p>
+                    <img
+                      src="/public/svgs/caret-down-thin-svgrepo-com.svg"
+                      alt="caret-down"
+                    />
+                  </div>
+                  <div class="info-container">
+                    <div class="info-details">
+                      <p class="info-text">productName</p>
+                      <p class="info-text">productPrice</p>
+                      <p class="info-text">stockTotal</p>
+                      <p class="info-text">productSold</p>
+                    </div>
+                    <div class="info-details">
+                      <p class="text-small">Nike Dunk High</p>
+                      <p class="text-small">$130</p>
+                      <p class="text-small">975</p>
+                      <p class="text-small">768</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="img-div">
+                  <img src="/public/images/Nike shoe.jpg" alt="nike shoe" />
+                </div>
+                <div class="info">
+                  <h5>Nike Dunk High</h5>
+                  <p class="p-small">$130</p>
+                  <div class="inventory">
+                    <div class="inventory-child">
+                      <p class="p-small">stock</p>
+                      <h6>975</h6>
+                    </div>
+                    <div class="inventory-child">
+                      <p class="p-small">sold</p>
+                      <h6>768</h6>
+                    </div>
+                  </div>
+                </div>
+                <div class="product-card">
+                  <div class="card-header">
+                    <img
+                      src="/public/svgs/rhombus-svgrepo-com.svg"
+                      alt="rhombus"
+                    />
+                    <p class="text-small">productCard</p>
+                    <img
+                      src="/public/svgs/caret-down-thin-svgrepo-com.svg"
+                      alt="caret-down"
+                    />
+                  </div>
+                  <div class="info-container">
+                    <div class="info-details">
+                      <p class="info-text">productName</p>
+                      <p class="info-text">productPrice</p>
+                      <p class="info-text">stockTotal</p>
+                      <p class="info-text">productSold</p>
+                    </div>
+                    <div class="info-details">
+                      <p class="text-small">Nike Dunk High</p>
+                      <p class="text-small">$130</p>
+                      <p class="text-small">975</p>
+                      <p class="text-small">768</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="img-div">
+                  <img src="/public/images/Nike shoe.jpg" alt="nike shoe" />
+                </div>
+                <div class="info">
+                  <h5>Nike Dunk High</h5>
+                  <p class="p-small">$130</p>
+                  <div class="inventory">
+                    <div class="inventory-child">
+                      <p class="p-small">stock</p>
+                      <h6>975</h6>
+                    </div>
+                    <div class="inventory-child">
+                      <p class="p-small">sold</p>
+                      <h6>768</h6>
+                    </div>
+                  </div>
+                </div>
+                <div class="product-card">
+                  <div class="card-header">
+                    <img
+                      src="/public/svgs/rhombus-svgrepo-com.svg"
+                      alt="rhombus"
+                    />
+                    <p class="text-small">productCard</p>
+                    <img
+                      src="/public/svgs/caret-down-thin-svgrepo-com.svg"
+                      alt="caret-down"
+                    />
+                  </div>
+                  <div class="info-container">
+                    <div class="info-details">
+                      <p class="info-text">productName</p>
+                      <p class="info-text">productPrice</p>
+                      <p class="info-text">stockTotal</p>
+                      <p class="info-text">productSold</p>
+                    </div>
+                    <div class="info-details">
+                      <p class="text-small">Nike Dunk High</p>
+                      <p class="text-small">$130</p>
+                      <p class="text-small">975</p>
+                      <p class="text-small">768</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="img-div">
+                  <img src="/public/images/Nike shoe.jpg" alt="nike shoe" />
+                </div>
+                <div class="info">
+                  <h5>Nike Dunk High</h5>
+                  <p class="p-small">$130</p>
+                  <div class="inventory">
+                    <div class="inventory-child">
+                      <p class="p-small">stock</p>
+                      <h6>975</h6>
+                    </div>
+                    <div class="inventory-child">
+                      <p class="p-small">sold</p>
+                      <h6>768</h6>
+                    </div>
+                  </div>
+                </div>
+                <div class="product-card">
+                  <div class="card-header">
+                    <img
+                      src="/public/svgs/rhombus-svgrepo-com.svg"
+                      alt="rhombus"
+                    />
+                    <p class="text-small">productCard</p>
+                    <img
+                      src="/public/svgs/caret-down-thin-svgrepo-com.svg"
+                      alt="caret-down"
+                    />
+                  </div>
+                  <div class="info-container">
+                    <div class="info-details">
+                      <p class="info-text">productName</p>
+                      <p class="info-text">productPrice</p>
+                      <p class="info-text">stockTotal</p>
+                      <p class="info-text">productSold</p>
+                    </div>
+                    <div class="info-details">
+                      <p class="text-small">Nike Dunk High</p>
+                      <p class="text-small">$130</p>
+                      <p class="text-small">975</p>
+                      <p class="text-small">768</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="img-div">
+                  <img src="/public/images/Nike shoe.jpg" alt="nike shoe" />
+                </div>
+                <div class="info">
+                  <h5>Nike Dunk High</h5>
+                  <p class="p-small">$130</p>
+                  <div class="inventory">
+                    <div class="inventory-child">
+                      <p class="p-small">stock</p>
+                      <h6>975</h6>
+                    </div>
+                    <div class="inventory-child">
+                      <p class="p-small">sold</p>
+                      <h6>768</h6>
+                    </div>
+                  </div>
+                </div>
+                <div class="product-card">
+                  <div class="card-header">
+                    <img
+                      src="/public/svgs/rhombus-svgrepo-com.svg"
+                      alt="rhombus"
+                    />
+                    <p class="text-small">productCard</p>
+                    <img
+                      src="/public/svgs/caret-down-thin-svgrepo-com.svg"
+                      alt="caret-down"
+                    />
+                  </div>
+                  <div class="info-container">
+                    <div class="info-details">
+                      <p class="info-text">productName</p>
+                      <p class="info-text">productPrice</p>
+                      <p class="info-text">stockTotal</p>
+                      <p class="info-text">productSold</p>
+                    </div>
+                    <div class="info-details">
+                      <p class="text-small">Nike Dunk High</p>
+                      <p class="text-small">$130</p>
+                      <p class="text-small">975</p>
+                      <p class="text-small">768</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="img-div">
+                  <img src="/public/images/Nike shoe.jpg" alt="nike shoe" />
+                </div>
+                <div class="info">
+                  <h5>Nike Dunk High</h5>
+                  <p class="p-small">$130</p>
+                  <div class="inventory">
+                    <div class="inventory-child">
+                      <p class="p-small">stock</p>
+                      <h6>975</h6>
+                    </div>
+                    <div class="inventory-child">
+                      <p class="p-small">sold</p>
+                      <h6>768</h6>
+                    </div>
+                  </div>
+                </div>
+                <div class="product-card">
+                  <div class="card-header">
+                    <img
+                      src="/public/svgs/rhombus-svgrepo-com.svg"
+                      alt="rhombus"
+                    />
+                    <p class="text-small">productCard</p>
+                    <img
+                      src="/public/svgs/caret-down-thin-svgrepo-com.svg"
+                      alt="caret-down"
+                    />
+                  </div>
+                  <div class="info-container">
+                    <div class="info-details">
+                      <p class="info-text">productName</p>
+                      <p class="info-text">productPrice</p>
+                      <p class="info-text">stockTotal</p>
+                      <p class="info-text">productSold</p>
+                    </div>
+                    <div class="info-details">
+                      <p class="text-small">Nike Dunk High</p>
+                      <p class="text-small">$130</p>
+                      <p class="text-small">975</p>
+                      <p class="text-small">768</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="img-div">
+                  <img src="/public/images/Nike shoe.jpg" alt="nike shoe" />
+                </div>
+                <div class="info">
+                  <h5>Nike Dunk High</h5>
+                  <p class="p-small">$130</p>
+                  <div class="inventory">
+                    <div class="inventory-child">
+                      <p class="p-small">stock</p>
+                      <h6>975</h6>
+                    </div>
+                    <div class="inventory-child">
+                      <p class="p-small">sold</p>
+                      <h6>768</h6>
+                    </div>
+                  </div>
+                </div>
+                <div class="product-card">
+                  <div class="card-header">
+                    <img
+                      src="/public/svgs/rhombus-svgrepo-com.svg"
+                      alt="rhombus"
+                    />
+                    <p class="text-small">productCard</p>
+                    <img
+                      src="/public/svgs/caret-down-thin-svgrepo-com.svg"
+                      alt="caret-down"
+                    />
+                  </div>
+                  <div class="info-container">
+                    <div class="info-details">
+                      <p class="info-text">productName</p>
+                      <p class="info-text">productPrice</p>
+                      <p class="info-text">stockTotal</p>
+                      <p class="info-text">productSold</p>
+                    </div>
+                    <div class="info-details">
+                      <p class="text-small">Nike Dunk High</p>
+                      <p class="text-small">$130</p>
+                      <p class="text-small">975</p>
+                      <p class="text-small">768</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="img-div">
+                  <img src="/public/images/Nike shoe.jpg" alt="nike shoe" />
+                </div>
+                <div class="info">
+                  <h5>Nike Dunk High</h5>
+                  <p class="p-small">$130</p>
+                  <div class="inventory">
+                    <div class="inventory-child">
+                      <p class="p-small">stock</p>
+                      <h6>975</h6>
+                    </div>
+                    <div class="inventory-child">
+                      <p class="p-small">sold</p>
+                      <h6>768</h6>
+                    </div>
+                  </div>
+                </div>
+                <div class="product-card">
+                  <div class="card-header">
+                    <img
+                      src="/public/svgs/rhombus-svgrepo-com.svg"
+                      alt="rhombus"
+                    />
+                    <p class="text-small">productCard</p>
+                    <img
+                      src="/public/svgs/caret-down-thin-svgrepo-com.svg"
+                      alt="caret-down"
+                    />
+                  </div>
+                  <div class="info-container">
+                    <div class="info-details">
+                      <p class="info-text">productName</p>
+                      <p class="info-text">productPrice</p>
+                      <p class="info-text">stockTotal</p>
+                      <p class="info-text">productSold</p>
+                    </div>
+                    <div class="info-details">
+                      <p class="text-small">Nike Dunk High</p>
+                      <p class="text-small">$130</p>
+                      <p class="text-small">975</p>
+                      <p class="text-small">768</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="img-div">
+                  <img src="/public/images/Nike shoe.jpg" alt="nike shoe" />
+                </div>
+                <div class="info">
+                  <h5>Nike Dunk High</h5>
+                  <p class="p-small">$130</p>
+                  <div class="inventory">
+                    <div class="inventory-child">
+                      <p class="p-small">stock</p>
+                      <h6>975</h6>
+                    </div>
+                    <div class="inventory-child">
+                      <p class="p-small">sold</p>
+                      <h6>768</h6>
+                    </div>
+                  </div>
+                </div>
+                <div class="product-card">
+                  <div class="card-header">
+                    <img
+                      src="/public/svgs/rhombus-svgrepo-com.svg"
+                      alt="rhombus"
+                    />
+                    <p class="text-small">productCard</p>
+                    <img
+                      src="/public/svgs/caret-down-thin-svgrepo-com.svg"
+                      alt="caret-down"
+                    />
+                  </div>
+                  <div class="info-container">
+                    <div class="info-details">
+                      <p class="info-text">productName</p>
+                      <p class="info-text">productPrice</p>
+                      <p class="info-text">stockTotal</p>
+                      <p class="info-text">productSold</p>
+                    </div>
+                    <div class="info-details">
+                      <p class="text-small">Nike Dunk High</p>
+                      <p class="text-small">$130</p>
+                      <p class="text-small">975</p>
+                      <p class="text-small">768</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="img-div">
+                  <img src="/public/images/Nike shoe.jpg" alt="nike shoe" />
+                </div>
+                <div class="info">
+                  <h5>Nike Dunk High</h5>
+                  <p class="p-small">$130</p>
+                  <div class="inventory">
+                    <div class="inventory-child">
+                      <p class="p-small">stock</p>
+                      <h6>975</h6>
+                    </div>
+                    <div class="inventory-child">
+                      <p class="p-small">sold</p>
+                      <h6>768</h6>
+                    </div>
+                  </div>
+                </div>
+                <div class="product-card">
+                  <div class="card-header">
+                    <img
+                      src="/public/svgs/rhombus-svgrepo-com.svg"
+                      alt="rhombus"
+                    />
+                    <p class="text-small">productCard</p>
+                    <img
+                      src="/public/svgs/caret-down-thin-svgrepo-com.svg"
+                      alt="caret-down"
+                    />
+                  </div>
+                  <div class="info-container">
+                    <div class="info-details">
+                      <p class="info-text">productName</p>
+                      <p class="info-text">productPrice</p>
+                      <p class="info-text">stockTotal</p>
+                      <p class="info-text">productSold</p>
+                    </div>
+                    <div class="info-details">
+                      <p class="text-small">Nike Dunk High</p>
+                      <p class="text-small">$130</p>
+                      <p class="text-small">975</p>
+                      <p class="text-small">768</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="img-div">
+                  <img src="/public/images/Nike shoe.jpg" alt="nike shoe" />
+                </div>
+                <div class="info">
+                  <h5>Nike Dunk High</h5>
+                  <p class="p-small">$130</p>
+                  <div class="inventory">
+                    <div class="inventory-child">
+                      <p class="p-small">stock</p>
+                      <h6>975</h6>
+                    </div>
+                    <div class="inventory-child">
+                      <p class="p-small">sold</p>
+                      <h6>768</h6>
+                    </div>
+                  </div>
+                </div>
+                <div class="product-card">
+                  <div class="card-header">
+                    <img
+                      src="/public/svgs/rhombus-svgrepo-com.svg"
+                      alt="rhombus"
+                    />
+                    <p class="text-small">productCard</p>
+                    <img
+                      src="/public/svgs/caret-down-thin-svgrepo-com.svg"
+                      alt="caret-down"
+                    />
+                  </div>
+                  <div class="info-container">
+                    <div class="info-details">
+                      <p class="info-text">productName</p>
+                      <p class="info-text">productPrice</p>
+                      <p class="info-text">stockTotal</p>
+                      <p class="info-text">productSold</p>
+                    </div>
+                    <div class="info-details">
+                      <p class="text-small">Nike Dunk High</p>
+                      <p class="text-small">$130</p>
+                      <p class="text-small">975</p>
+                      <p class="text-small">768</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="img-div">
+                  <img src="/public/images/Nike shoe.jpg" alt="nike shoe" />
+                </div>
+                <div class="info">
+                  <h5>Nike Dunk High</h5>
+                  <p class="p-small">$130</p>
+                  <div class="inventory">
+                    <div class="inventory-child">
+                      <p class="p-small">stock</p>
+                      <h6>975</h6>
+                    </div>
+                    <div class="inventory-child">
+                      <p class="p-small">sold</p>
+                      <h6>768</h6>
+                    </div>
+                  </div>
+                </div>
+                <div class="product-card">
+                  <div class="card-header">
+                    <img
+                      src="/public/svgs/rhombus-svgrepo-com.svg"
+                      alt="rhombus"
+                    />
+                    <p class="text-small">productCard</p>
+                    <img
+                      src="/public/svgs/caret-down-thin-svgrepo-com.svg"
+                      alt="caret-down"
+                    />
+                  </div>
+                  <div class="info-container">
+                    <div class="info-details">
+                      <p class="info-text">productName</p>
+                      <p class="info-text">productPrice</p>
+                      <p class="info-text">stockTotal</p>
+                      <p class="info-text">productSold</p>
+                    </div>
+                    <div class="info-details">
+                      <p class="text-small">Nike Dunk High</p>
+                      <p class="text-small">$130</p>
+                      <p class="text-small">975</p>
+                      <p class="text-small">768</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- <div class="test"></div> -->
+      </section>
+    </div>
+    <script src="../public/script.js"></script>
+  </body>
+</html>
