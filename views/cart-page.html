@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="/public/styles.css" />
+    <title>cart-page</title>
+  </head>
+  <body>
+    <div id="cart-page" class="cart-page">
+      <header>
+        <div class="nav-container">
+          <nav>
+            <a href="products.html">
+              <div class="logo">
+                <img
+                  src="/public/svgs/shop-store-svgrepo-com.svg"
+                  alt="svg logo"
+                />
+                <div class="text">Store Manager</div>
+              </div>
+            </a>
+            <a href="#" class="mobile-menu">
+              <div></div>
+              <div></div>
+              <div></div>
+            </a>
+            <ul class="desktop-links">
+              <li>
+                <a href="products.html"
+                  ><img
+                    src="/public/svgs/product-service-campaign-item-svgrepo-com.svg"
+                    alt="dashboard logo"
+                  />
+                  <div>Products</div>
+                </a>
+              </li>
+              <li>
+                <a href="#"
+                  ><img
+                    src="/public/svgs/verification-svgrepo-com.svg"
+                    alt="dashboard logo"
+                  />
+                  <div>Sales</div>
+                </a>
+              </li>
+              <li>
+                <a href="#"
+                  ><img
+                    src="/public/svgs/verification-svgrepo-com.svg"
+                    alt="dashboard logo"
+                  />
+                  <div>Cart</div>
+                </a>
+              </li>
+              <li>
+                <a href="#"
+                  ><img
+                    src="/public/svgs/users-svgrepo-com.svg"
+                    alt="dashboard logo"
+                  />
+                  <div>Users</div>
+                </a>
+              </li>
+            </ul>
+            <div class="user-profile">
+              <img
+                src="https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png"
+                alt="user-image"
+              />
+              <div>John Doe</div>
+              <i class="fa fa-caret-down" id="dropdown" aria-hidden="true"></i>
+            </div>
+            <div id="user-options" class="user-options user-options-hidden">
+              <a href="login.html">logout</a>
+            </div>
+          </nav>
+        </div>
+      </header>
+      <div class="mobile-menu-links">
+        <div class="user-profile-mobile">
+          <img
+            src="https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png"
+            alt="user-image-mobile"
+          />
+          <div class="user-div">
+            <div>John Doe</div>
+            <i
+              class="fa fa-caret-down"
+              id="dropdown-mobile"
+              aria-hidden="true"
+            ></i>
+          </div>
+        </div>
+        <div id="user-options-mobile" class="user-options-mobile">
+          <a href="login.html">logout</a>
+        </div>
+        <ul class="mobile-links">
+          <li>
+            <a href="#">
+              <div class="nav-item">
+                <img
+                  src="/public/svgs/product-service-campaign-item-svgrepo-com.svg"
+                  alt="dashboard logo"
+                />
+                <div>Products</div>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <div class="nav-item">
+                <img
+                  src="/public/svgs/verification-svgrepo-com.svg"
+                  alt="dashboard logo"
+                />
+                <div>Sales</div>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <div class="nav-item">
+                <img
+                  src="/public/svgs/users-svgrepo-com.svg"
+                  alt="dashboard logo"
+                />
+                <div>Customers</div>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <div class="nav-item">
+                <img
+                  src="/public/svgs/users-svgrepo-com.svg"
+                  alt="dashboard logo"
+                />
+                <div>Users</div>
+              </div>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <section class="order-section">
+        <div class="product-info-container">
+          <div id="product-overview" class="product-overview">
+            <div class="product-image">
+              <img src="/public/images/Nike shoe.jpg" alt="nike shoe image" />
+              <div class="smaller-image">
+                <img src="/public/images/Nike shoe.jpg" alt="nike shoe image" />
+                <img src="/public/images/Nike shoe.jpg" alt="nike shoe image" />
+                <img src="/public/images/Nike shoe.jpg" alt="nike shoe image" />
+                <img src="/public/images/Nike shoe.jpg" alt="nike shoe image" />
+              </div>
+            </div>
+            <div class="product-stats">
+              <div class="ratings">
+                <div class="product-item">
+                  <p>Stylish</p>
+                  <img
+                    src="/public/svgs/verified-check-svgrepo-com.svg"
+                    alt="verification-img"
+                  />
+                </div>
+                <div class="product-item">
+                  <img src="/public/svgs/star-svgrepo-com.svg" alt="ratings" />
+                  <p>(4.8)</p>
+                  <a href="#">17.5k reviews</a>
+                </div>
+              </div>
+              <div class="line"></div>
+              <div class="location">
+                <div class="location-div">
+                  <img
+                    src="/public/svgs/location-pin-svgrepo-com.svg"
+                    alt="location-img"
+                  />
+                  <p>New York, USA</p>
+                </div>
+                <a href="#">
+                  <div class="store-link">VISIT STORE</div>
+                </a>
+              </div>
+            </div>
+            <div class="info"></div>
+          </div>
+          <div id="product-details" class="product-details">
+            <h1>NIKE DUNK HIGH</h1>
+            <div class="product-rating">
+              <div class="star-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+              </div>
+              <h6>(4.5)</h6>
+              <a href="#">623 views</a>
+              <p>768 sold</p>
+              <p>975 left</p>
+            </div>
+            <h2>$130</h2>
+            <p>SELECT COLOUR</p>
+            <div class="color-options">
+              <div class="color">
+                BLACK & <br />
+                WHITE
+              </div>
+              <div class="color">
+                BLUE & <br />
+                WHITE
+              </div>
+            </div>
+            <p>SELECT SIZE</p>
+            <div class="size-options">
+              <div class="size">42</div>
+              <div class="size">43</div>
+              <div class="size">45</div>
+            </div>
+            <div class="product-description">
+              <p class="first">DESCRIPTION</p>
+              <p>
+                Created for the hardwood but taken to the streets, the '80s
+                b-ball icon returns with perfectly sheened overlays and original
+                university colors. With its classic hoops design, the Nike Dunk
+                High Retro channels '80s vintage back onto the streets while its
+                padded, high-top collar adds an old-school look rooted in
+                comfort.
+              </p>
+            </div>
+            <div class="details">
+              <p>DETAILS</p>
+              <div class="details-div">
+                <img
+                  src="/public/svgs/location-pin-svgrepo-com.svg"
+                  alt="location-svg"
+                />
+                <p>sent from</p>
+                <h6>NEW YORK, USA</h6>
+              </div>
+              <div class="details-div"></div>
+              <div class="details-div"></div>
+            </div>
+          </div>
+        </div>
+        <div class="order-details">
+          <h4>ORDER DETAILS</h4>
+          <div class="line-2"></div>
+          <div class="quantity">
+            <h5>Quantity</h5>
+            <div class="change-quantity">
+              <div class="quantity-btn">
+                <button class="btn-1">
+                  <i class="fa fa-minus" aria-hidden="true"></i>
+                </button>
+                <h5>2</h5>
+                <button class="btn-2">
+                  <i class="fa fa-plus" aria-hidden="true"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="product-specs">
+            <div>
+              <p>Color</p>
+              <p>Size</p>
+              <p>Price</p>
+              <p>Delivery</p>
+            </div>
+            <div>
+              <h5>Black and White</h5>
+              <h5>42</h5>
+              <h5>$130</h5>
+              <h5>$5</h5>
+            </div>
+          </div>
+          <div class="sub-total">
+            <h5>Sub Total</h5>
+            <h5>$135</h5>
+          </div>
+          <button class="add-to-cart">
+            <img
+              src="/public/svgs/verification-svgrepo-com.svg"
+              alt="cart-logo"
+            />
+            <span>Add to Cart</span>
+          </button>
+          <button class="create-record">
+            <span>Create Sales Record</span>
+          </button>
+        </div>
+      </section>
+    </div>
+    <script src="../public/script.js"></script>
+  </body>
+</html>
