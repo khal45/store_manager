@@ -7,6 +7,9 @@ const mobileMenuLinks = document.querySelectorAll(".mobile-menu-links");
 const body = document.body;
 const mobileFormContainer = document.querySelector(".mobile-form-container");
 const addProductBtn = document.getElementById("add-product");
+const saleElements = document.querySelectorAll(".sale");
+const div2Elements = document.querySelectorAll(".div-2");
+const showMore = document.querySelector(".show-more");
 const toggleFunc = (element, className) => {
   element.classList.toggle(className);
 };
@@ -43,5 +46,17 @@ mobileMenu.forEach((menu) => {
     menu.classList.contains("mobile-menu-open")
       ? body.classList.add("no-scroll")
       : body.classList.remove("no-scroll");
+  });
+});
+
+saleElements.forEach((sale) => {
+  sale.addEventListener("click", () => {
+    let div2 = sale.children[1];
+    let firstDiv3 = div2.children[0];
+    let items = firstDiv3.children[0];
+    let showMore = items.children[2];
+    console.log(showMore);
+    toggleFunc(div2, "expanded");
+    toggleFunc(showMore, "h3-collapsed");
   });
 });
