@@ -10,6 +10,9 @@ const addProductBtn = document.getElementById("add-product");
 const saleElements = document.querySelectorAll(".sale");
 const div2Elements = document.querySelectorAll(".div-2");
 const showMore = document.querySelector(".show-more");
+const addUser = document.querySelector(".add-user");
+const createAttendant = document.querySelector(".create-attendant");
+
 const toggleFunc = (element, className) => {
   element.classList.toggle(className);
 };
@@ -59,4 +62,8 @@ saleElements.forEach((sale) => {
     toggleFunc(div2, "expanded");
     toggleFunc(showMore, "h3-collapsed");
   });
+});
+
+addUser.addEventListener("click", () => {
+  toggleFunc(createAttendant, "create-attendant-visible");
 });
