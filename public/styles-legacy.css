@@ -1,5 +1,4 @@
-/* ALWAYS POSITION THE PARENT RELATIVE AND THE CHILD ABSOLUTE WHEN YOU WANT TO USE PERCENTAGE VALUES TO POSTION CHILD RELATIVE TO CONTAINER */
-
+/* THIS IS THE ORIGINAL CSS FILE THAT WAS USED. DO NOT EDIT OR DELETE!!, FOR REFERENCE PURPOSE ONLY */
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 @import url("../node_modules/@fortawesome/fontawesome-free/css/all.min.css");
 
@@ -210,6 +209,10 @@ nav a {
 
 .user-profile div {
   margin: 15px 0px 0px 15px;
+}
+
+.user-name {
+  color: var(--content-black);
 }
 
 .user-profile i {
