@@ -1,5 +1,4 @@
-/* ALWAYS POSITION THE PARENT RELATIVE AND THE CHILD ABSOLUTE WHEN YOU WANT TO USE PERCENTAGE VALUES TO POSTION CHILD RELATIVE TO CONTAINER */
-
+/* THIS IS THE ORIGINAL CSS FILE THAT WAS USED. DO NOT EDIT OR DELETE!!, FOR REFERENCE PURPOSE ONLY */
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 @import url("../node_modules/@fortawesome/fontawesome-free/css/all.min.css");
 
@@ -210,6 +209,10 @@ nav a {
 
 .user-profile div {
   margin: 15px 0px 0px 15px;
+}
+
+.user-name {
+  color: var(--content-black);
 }
 
 .user-profile i {
@@ -1574,5 +1577,237 @@ nav a {
 
   .pagination-nav ul {
     margin-left: 40%;
+  }
+}
+
+/* The following css is for the users page */
+
+.users-page {
+  height: 100%;
+  width: 100%;
+}
+
+.user-section {
+  /* border: 2px solid #171717; */
+  width: 100%;
+  height: 87vh;
+  margin-top: 5vh;
+  background-color: var(--pure-white);
+  position: relative;
+}
+
+.user-general {
+  /* border: 2px solid #171717; */
+  display: flex;
+  flex-direction: row;
+  gap: 35vw;
+  padding: 5% 4% 0px 5%;
+}
+
+.div-4 {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  margin-top: 7px;
+}
+
+.gray {
+  color: var(--content-gray);
+}
+
+.add-user {
+  width: 80px;
+  height: 35px;
+  border: 1px solid #171717;
+  background-color: var(--content-black);
+  color: var(--pure-white);
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.search-user-container-desktop {
+  display: none;
+  /* margin-top: 3vh; */
+}
+
+.search-user-desktop {
+  background-color: var(--background);
+  width: 27vw;
+  height: 40px;
+  border-radius: 25px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.search-input-desktop {
+  all: unset;
+  height: 100%;
+  width: 100%;
+  padding: 6px 15px;
+  color: var(--content-black);
+}
+
+.search-user-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 3vh;
+  /* visibility: hidden; */
+}
+
+.search-user {
+  background-color: var(--background);
+  width: 90%;
+  height: 40px;
+  border-radius: 25px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.search-input {
+  all: unset;
+  height: 100%;
+  width: 100%;
+  padding: 6px 15px;
+  color: var(--content-black);
+}
+
+.searchplus {
+  display: flex;
+  flex-direction: row;
+  gap: 4%;
+}
+
+.users-div {
+  display: flex;
+  flex-direction: column;
+  gap: 2%;
+  width: 100%;
+  height: 70vh;
+  /* border: 2px solid #171717; */
+  margin-top: 8%;
+  padding: 15px;
+}
+
+.attendant-container {
+  width: 100%;
+  height: 10%;
+  /* border: 2px solid #6a976e; */
+}
+
+.attendant {
+  width: 100%;
+  display: flex;
+  height: 100%;
+  /* border: 2px solid red; */
+  padding: 0px 2vw 0px 2vw;
+  /* gap: 15vw; */
+}
+
+.attendant div {
+  display: flex;
+  gap: 3px;
+  flex: 1;
+}
+
+.attendant img {
+  width: 35px;
+  height: 35px;
+}
+
+.role {
+  color: var(--content-gray);
+}
+
+.attendant h2 {
+  margin-top: 7px;
+}
+
+.line-3 {
+  border-bottom: 1px solid var(--content-gray);
+  width: 100%;
+  /* margin-bottom: 10px; */
+}
+
+.create-attendant {
+  width: 80vw;
+  height: 50vh;
+  background-color: var(--pure-white);
+  border: 1px solid #171717;
+  border-radius: 10px;
+  position: absolute;
+  z-index: 1;
+  top: 10%;
+  left: 10vw;
+  padding: 20px;
+  display: none;
+}
+
+.create-attendant-visible {
+  display: block;
+}
+
+.create-attendant h1 {
+  display: flex;
+  justify-content: center;
+}
+
+.create-attendant div {
+  margin-top: 8%;
+}
+
+.create-attendant input {
+  height: 7vh;
+  width: 80%;
+  border: 1px solid #747474;
+  margin: 0px 10px 0px 10px;
+}
+
+.create-attendant button {
+  margin-left: 13vw;
+  margin-top: 7%;
+  border-radius: 5px;
+  width: 40vw;
+  height: 8%;
+  color: var(--pure-white);
+  background-color: var(--content-black);
+}
+
+/* Desktop design */
+@media only screen and (width >= 64em) {
+  .user-general {
+    gap: 47vw;
+  }
+
+  .search-user-container {
+    display: none;
+  }
+
+  .search-user-container-desktop {
+    display: flex;
+  }
+
+  .users-div {
+    margin-top: 2%;
+  }
+
+  /* .attendant {
+    gap: 50vw;
+  } */
+
+  .create-attendant {
+    width: 40%;
+    height: 64vh;
+    left: 30%;
+  }
+
+  .create-attendant button {
+    width: 80%;
+    margin-left: 10%;
+  }
+
+  .add-user {
+    cursor: pointer;
   }
 }

@@ -1,0 +1,271 @@
+.sales-page {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+.sales-section {
+  background-color: var(--pure-white);
+  height: 100%;
+  margin-top: 3vh;
+}
+
+.sales-section h1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 0px 0px 0px;
+  color: var(--content-black);
+}
+
+.sales-search-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 2vh;
+}
+
+.sales-form {
+  background-color: var(--background);
+  width: 250px;
+  height: 40px;
+  border-radius: 25px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: absolute;
+}
+
+.sales-input {
+  all: unset;
+  height: 100%;
+  width: 100%;
+  padding: 6px 15px;
+  color: var(--content-black);
+}
+
+::placeholder {
+  color: #86898f;
+  opacity: 0.7;
+}
+
+.sales-info {
+  color: var(--content-black);
+  display: flex;
+  flex-direction: column;
+  margin: 7vh 0px 0px 20px;
+  gap: 10px;
+}
+
+.div-1 {
+  display: flex;
+  flex-direction: row;
+  gap: 3vw;
+}
+
+.time-filter {
+  width: 115px;
+  height: 30px;
+  border-radius: 5px;
+  padding: 5px;
+  font-size: 16px;
+  background-color: var(--background);
+  color: var(--content-black);
+  cursor: pointer;
+  outline: none;
+}
+
+.time-filter option {
+  font-size: 12px;
+}
+
+.amount {
+  font-weight: 300;
+}
+
+.recent-sales {
+  width: 86%;
+  height: 100%;
+  border: 1px solid var(--content-gray);
+  margin: 15px 0px 0px 20px;
+  /* padding: 0px 6%; */
+  border-radius: 5px;
+}
+
+.recent-sales h2 {
+  display: flex;
+  justify-content: center;
+  color: var(--content-black);
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.sales-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.sale-dark {
+  display: flex;
+  flex-direction: row;
+  gap: 5vw;
+  background-color: #cccccc;
+  padding: 4px 6%;
+}
+
+.sale-light {
+  display: flex;
+  flex-direction: row;
+  gap: 5vw;
+  background-color: #f2f2f2;
+  padding: 4px 6%;
+}
+
+.sale-date {
+  display: flex;
+  align-items: center;
+}
+
+.div-2 {
+  display: flex;
+  flex-direction: column;
+  /* gap: 7px; */
+}
+
+.div-3 {
+  display: flex;
+  flex-direction: row;
+  gap: 5vw;
+}
+
+.div-2 .div-3 {
+  display: none;
+}
+
+.div-2 .div-3:first-child {
+  display: flex;
+}
+
+.div-2.expanded .div-3 {
+  display: flex;
+}
+
+.items {
+  display: flex;
+  flex-direction: column;
+}
+
+.h3-collapsed {
+  display: none;
+}
+
+.total-amount {
+  display: flex;
+  align-items: center;
+}
+
+.sale-details-container {
+  display: flex;
+  justify-content: center;
+}
+
+.sale-details {
+  width: 84vw;
+  height: 40vh;
+  margin-top: 10%;
+  /* border: 2px solid #171717; */
+  background-color: var(--pure-white);
+  /* display: none; */
+}
+
+.sale-details-div {
+  width: 100%;
+  min-height: 100%;
+  /* border: 2px solid #171717; */
+  margin: 0px;
+  display: flex;
+  gap: 8%;
+  padding: 30px 10px;
+}
+
+.sale-details p {
+  color: var(--content-gray);
+}
+
+.sale-details-div div {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.div-2 a {
+  text-decoration: none;
+  color: var(--content-black);
+}
+
+.pagination-div {
+  margin-top: 10%;
+  /* border: 2px solid #171717; */
+}
+
+.pagination-nav {
+  display: flex;
+}
+
+.pagination-nav ul {
+  margin-left: 15%;
+  list-style-type: none;
+  display: flex;
+  gap: 10%;
+}
+
+.pagination-nav a {
+  color: var(--content-black);
+}
+
+.pagination-btn {
+  background-color: var(--background);
+  border-radius: 5px;
+  width: 40px;
+  height: 25px;
+}
+
+/* Desktop Design */
+
+@media only screen and (width >= 64em) {
+  .sales-section {
+    /* margin-bottom: 10%; */
+    padding: 0px 20px 5% 20px;
+  }
+
+  .sales-info {
+    margin-left: 20%;
+  }
+
+  .recent-sales {
+    width: 60%;
+    margin-left: 20%;
+  }
+
+  .sale-dark {
+    gap: 10vw;
+  }
+
+  .sale-light {
+    gap: 10vw;
+  }
+
+  .pagination-div {
+    margin-top: 5%;
+  }
+
+  .sale-details {
+    margin-top: 3%;
+    width: 40vw;
+    height: 100%;
+  }
+
+  .pagination-nav ul {
+    margin-left: 40%;
+  }
+}
