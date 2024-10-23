@@ -3,8 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" type="text/css" href="/public/styles-general.css" />
-    <link rel="stylesheet" type="text/css" href="/public/cart-styles.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="/public/styles/styles-general.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="/public/styles/cart-styles.css"
+    />
     <title>cart-page</title>
   </head>
   <body>
@@ -145,7 +153,79 @@
       </div>
       <section class="order-section">
         <div class="product-info-container">
+          <div class="delete-window" id="delete-window">
+            <button class="close-btn" id="close-btn">
+              <img
+                src="/public/svgs/multiply-svgrepo-com.svg"
+                alt="multiply-svgrepo-com"
+              />
+            </button>
+            <h3>confirm deletion. this can not be reversed!</h3>
+            <div class="action-wrapper">
+              <button class="cancel-btn" id="cancel-btn">cancel</button>
+              <button class="delete-btn" id="cancel-btn">delete</button>
+            </div>
+          </div>
+          <div class="edit-window" id="edit-window">
+            <button id="close-edit-btn" class="close-btn">
+              <img
+                src="/public/svgs/multiply-svgrepo-com.svg"
+                alt="close-btn"
+              />
+            </button>
+            <form id="edit-form" class="edit-form">
+              <input
+                type="search"
+                id="edit-input-desktop"
+                name="search"
+                class="edit-input"
+                placeholder="Product Name"
+              />
+            </form>
+            <form id="edit-description" class="edit-description">
+              <textarea
+                name="product-description"
+                id="description-text"
+                class="description-text"
+                placeholder="Description"
+              ></textarea>
+            </form>
+            <div class="price-stock-container">
+              <form id="price" class="div-4 price">
+                <input
+                  type="text"
+                  name="price"
+                  id="price"
+                  placeholder="price"
+                />
+              </form>
+              <form id="stock" class="div-4 stock">
+                <input
+                  type="text"
+                  name="stock"
+                  id="stock"
+                  placeholder="stock"
+                />
+              </form>
+            </div>
+            <div class="flex-container">
+              <button id="edit-product" class="edit-product-btn">
+                Edit Product <i class="fa fa-plus" aria-hidden="true"></i>
+              </button>
+            </div>
+          </div>
           <div id="product-overview" class="product-overview">
+            <div class="div-3">
+              <button id="delete-btn">
+                <img
+                  src="/public/svgs/trash-alt-svgrepo-com.svg"
+                  alt="trash-icon"
+                />
+              </button>
+              <button id="edit-btn">
+                <img src="/public/svgs/edit-svgrepo-com.svg" alt="edit-icon" />
+              </button>
+            </div>
             <div class="product-image">
               <img src="/public/images/Nike shoe.jpg" alt="nike shoe image" />
               <div class="smaller-image">
@@ -187,7 +267,23 @@
             <div class="info"></div>
           </div>
           <div id="product-details" class="product-details">
-            <h1>NIKE DUNK HIGH</h1>
+            <div class="div-1">
+              <h1>NIKE DUNK HIGH</h1>
+              <div class="div-2">
+                <button id="delete-btn">
+                  <img
+                    src="/public/svgs/trash-alt-svgrepo-com.svg"
+                    alt="trash-icon"
+                  />
+                </button>
+                <button id="edit-btn">
+                  <img
+                    src="/public/svgs/edit-svgrepo-com.svg"
+                    alt="edit-icon"
+                  />
+                </button>
+              </div>
+            </div>
             <div class="product-rating">
               <div class="star-rating">
                 <i class="fas fa-star"></i>
