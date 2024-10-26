@@ -148,7 +148,7 @@
 
 .create-attendant {
   width: 80vw;
-  height: 50vh;
+  height: 43vh;
   background-color: var(--pure-white);
   border: 1px solid #171717;
   border-radius: 10px;
@@ -177,7 +177,7 @@
   height: 7vh;
   width: 80%;
   border: 1px solid #747474;
-  margin: 0px 10px 0px 10px;
+  margin: 0px 10px 0px 30px;
 }
 
 .create-attendant button {
@@ -221,6 +221,10 @@
   .create-attendant button {
     width: 80%;
     margin-left: 10%;
+  }
+
+  .create-attendant input {
+    margin: 0px 10px 0px 50px;
   }
 
   .add-user {

@@ -3,8 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" type="text/css" href="/public/styles-general.css" />
-    <link rel="stylesheet" type="text/css" href="/public/users-styles.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="/public/styles/styles-general.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="/public/styles/users-styles.css"
+    />
     <title>Users page</title>
   </head>
   <body>
@@ -176,27 +184,27 @@
           </div>
           <div class="searchplus">
             <div class="search-user-container-desktop">
-              <form id="search" class="search-user-desktop">
+              <form id="search-form-desktop" class="search-user-desktop">
                 <input
                   type="search"
-                  id="search"
+                  id="search-input-desktop"
                   name="search"
                   class="search-input-desktop"
                   placeholder="Search User"
                 />
               </form>
             </div>
-            <button class="add-user">
+            <button class="add-user" id="add-user">
               <img src="/public/svgs/plus white.svg" alt="plus-white" />
               Add
             </button>
           </div>
         </div>
         <div class="search-user-container">
-          <form id="search" class="search-user">
+          <form id="search-form-mobile" class="search-user">
             <input
               type="search"
-              id="search"
+              id="search-input-mobile"
               name="search"
               class="search-input"
               placeholder="Search User"
@@ -272,6 +280,6 @@
         </div>
       </section>
     </div>
-    <script src="../public/script.js"></script>
+    <script src="/public/script.js"></script>
   </body>
 </html>

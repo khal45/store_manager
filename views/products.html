@@ -3,8 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" type="text/css" href="/public/styles-general.css" />
-    <link rel="stylesheet" type="text/css" href="/public/products-styles.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="/public/styles/styles-general.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="/public/styles/products-styles.css"
+    />
     <title>Products page</title>
   </head>
   <body>
@@ -154,15 +162,15 @@
                   alt="search-btn"
                 />
               </button> -->
-              <button class="add-btn">
+              <button class="add-btn" id="add-btn">
                 <img src="/public/svgs/plus-svgrepo-com.svg" alt="add-btn" />
               </button>
             </div>
             <div class="desktop-products">
-              <form id="search" class="desktop-form">
+              <form id="search-form-desktop" class="desktop-form">
                 <input
                   type="search"
-                  id="search"
+                  id="search-input-desktop"
                   name="search"
                   class="desktop-input"
                   placeholder="Search product"
@@ -174,15 +182,65 @@
             </div>
           </div>
           <div class="mobile-form-container">
-            <form id="search" class="mobile-form">
+            <form id="search-form-mobile" class="mobile-form">
               <input
                 type="search"
-                id="search"
+                id="search-input-desktop"
                 name="search"
                 class="mobile-input"
                 placeholder="Search product"
               />
             </form>
+          </div>
+          <div class="create-product-wrapper">
+            <div class="create-product-container" id="create-product-container">
+              <button class="close-window" id="close-window">
+                <img
+                  src="/public/svgs/multiply-svgrepo-com.svg"
+                  alt="multiply-svgrepo-com"
+                />
+              </button>
+              <form id="create-form-mobile" class="create-form">
+                <input
+                  type="search"
+                  id="create-input-desktop"
+                  name="search"
+                  class="mobile-input"
+                  placeholder="Product Name"
+                />
+              </form>
+              <form id="product-description" class="product-description">
+                <textarea
+                  name="product-description"
+                  id="description-text"
+                  class="description-text"
+                  placeholder="Description"
+                ></textarea>
+              </form>
+              <div class="price-stock-container">
+                <form id="price" class="div-1 price">
+                  <input
+                    type="text"
+                    name="price"
+                    id="price"
+                    placeholder="price"
+                  />
+                </form>
+                <form id="stock" class="div-1 stock">
+                  <input
+                    type="text"
+                    name="stock"
+                    id="stock"
+                    placeholder="stock"
+                  />
+                </form>
+              </div>
+              <div class="flex-container">
+                <button id="create-product" class="create-product-btn">
+                  Create Product <i class="fa fa-plus" aria-hidden="true"></i>
+                </button>
+              </div>
+            </div>
           </div>
           <div class="products-display-container">
             <div class="products-display">
