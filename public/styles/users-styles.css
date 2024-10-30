@@ -121,6 +121,11 @@
   /* gap: 15vw; */
 }
 
+.user-link {
+  color: var(--content-black);
+  text-decoration: none;
+}
+
 .attendant div {
   display: flex;
   gap: 3px;
