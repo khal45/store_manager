@@ -183,46 +183,53 @@
                   alt="multiply-svgrepo-com"
                 />
               </button>
-              <form id="create-form-mobile" class="create-form">
-                <input
-                  type="search"
-                  id="create-input-desktop"
-                  name="search"
-                  class="mobile-input"
-                  placeholder="Product Name"
-                />
-              </form>
-              <form id="product-description" class="product-description">
-                <textarea
-                  name="product-description"
-                  id="description-text"
-                  class="description-text"
-                  placeholder="Description"
-                ></textarea>
-              </form>
-              <div class="price-stock-container">
-                <form id="price" class="div-1 price">
+              <form action="/products" method="post">
+                <div class="create-form">
                   <input
                     type="text"
-                    name="price"
-                    id="price"
-                    placeholder="price"
+                    id="create-input-desktop"
+                    name="productName"
+                    class="mobile-input"
+                    placeholder="Product Name"
                   />
-                </form>
-                <form id="stock" class="div-1 stock">
-                  <input
+                </div>
+                <div class="product-description">
+                  <textarea
                     type="text"
-                    name="stock"
-                    id="stock"
-                    placeholder="stock"
-                  />
-                </form>
-              </div>
-              <div class="flex-container">
-                <button id="create-product" class="create-product-btn">
-                  Create Product <i class="fa fa-plus" aria-hidden="true"></i>
-                </button>
-              </div>
+                    name="productDescription"
+                    id="description-text"
+                    class="description-text"
+                    placeholder="Description"
+                  ></textarea>
+                </div>
+                <div class="price-stock-container">
+                  <div class="div-1 price">
+                    <input
+                      type="text"
+                      name="price"
+                      id="price"
+                      placeholder="price"
+                    />
+                  </div>
+                  <div class="div-1 stock">
+                    <input
+                      type="text"
+                      name="stock"
+                      id="stock"
+                      placeholder="stock"
+                    />
+                  </div>
+                </div>
+                <div class="flex-container">
+                  <button
+                    type="submit"
+                    id="create-product"
+                    class="create-product-btn"
+                  >
+                    Create Product <i class="fa fa-plus" aria-hidden="true"></i>
+                  </button>
+                </div>
+              </form>
             </div>
           </div>
           <div class="products-display-container">

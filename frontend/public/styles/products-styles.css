@@ -176,7 +176,7 @@
 }
 
 .product-description {
-  height: 35%;
+  height: 17vh;
   width: 95%;
   margin: 8% 0 0 3%;
 }
@@ -496,6 +496,7 @@
 
   .product-description {
     margin-top: 4%;
+    height: 23vh;
   }
 
   .price-stock-container {
