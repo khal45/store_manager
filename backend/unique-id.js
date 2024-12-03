@@ -6,3 +6,5 @@ const idGenerator = () => {
   }
   return str;
 };
+
+export default idGenerator;

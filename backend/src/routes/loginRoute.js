@@ -1,4 +1,5 @@
 import "../middleware/authMiddleware.js";
+import { getLogin } from "../controllers/loginController.js";
 import express from "express";
 import { fileURLToPath } from "url";
 import path from "path";
@@ -38,17 +39,14 @@ loginRouter.use(
 loginRouter.use(passport.initialize());
 loginRouter.use(passport.session());
 
-loginRouter
-  .route("/")
-  .get((req, res) => {
-    res.sendFile(filePath);
+loginRouter.get("/", getLogin);
+loginRouter.post(
+  "/",
+  passport.authenticate("local", {
+    session: false,
+    successRedirect: "/products",
+    failureRedirect: "/",
   })
-  .post(
-    passport.authenticate("local", {
-      session: false,
-      successRedirect: "/products",
-      failureRedirect: "/",
-    })
-  );
+);
 
 export default loginRouter;

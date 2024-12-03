@@ -3,6 +3,9 @@ import passport from "passport";
 import { Strategy as LocalStrategy } from "passport-local";
 import bcrypt from "bcrypt";
 
+// 1. get the role of the user
+// 2.
+
 passport.use(
   new LocalStrategy(async (username, password, cb) => {
     try {
@@ -10,7 +13,11 @@ passport.use(
 
       if (!user) {
         console.log("user does not exist");
-        return cb(null, false);
+        return cb(null, false, { error: "user does not esist" });
+      }
+
+      if (user.role === "Admin") {
+        console.log("users is an admin");
       }
 
       const passwordsMatch = await bcrypt.compare(password, user.password);
@@ -20,7 +27,7 @@ passport.use(
         return cb(null, user);
       } else {
         console.error("incorrect password");
-        return cb(null, false);
+        return cb(null, false, { error: "incorrect password" });
       }
     } catch (error) {
       console.log(error);

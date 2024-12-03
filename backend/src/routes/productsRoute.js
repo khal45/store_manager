@@ -1,3 +1,4 @@
+import { getProducts, addProduct } from "../controllers/productsController.js";
 import express from "express";
 import { fileURLToPath } from "url";
 import path from "path";
@@ -19,14 +20,17 @@ productRouter.use(
 productRouter.use(bodyParser.json());
 productRouter.use(bodyParser.urlencoded({ extended: true }));
 
-productRouter
-  .route("/products")
-  .get((req, res) => {
-    res.sendFile(filePath);
-  })
-  .post((req, res) => {
-    console.log(req.body);
-    res.send("data recieved");
-  });
+productRouter.get("/products", getProducts);
+productRouter.post("/products", addProduct);
+
+// productRouter
+//   .route("/products")
+//   .get((req, res) => {
+//     res.sendFile(filePath);
+//   })
+//   .post((req, res) => {
+//     console.log(req.body);
+//     res.send("data recieved");
+//   });
 
 export default productRouter;
