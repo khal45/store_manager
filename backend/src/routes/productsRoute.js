@@ -1,3 +1,4 @@
+import { verifyToken, isAdmin } from "../middleware/authMiddleware.js";
 import { getProducts, addProduct } from "../controllers/productsController.js";
 import express from "express";
 import { fileURLToPath } from "url";
@@ -8,7 +9,6 @@ const productRouter = express.Router();
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-const filePath = path.join(__dirname, "../../../frontend/views/products.html");
 
 productRouter.use(
   express.static(path.join(__dirname, "../../../frontend/node_modules"))
@@ -20,17 +20,7 @@ productRouter.use(
 productRouter.use(bodyParser.json());
 productRouter.use(bodyParser.urlencoded({ extended: true }));
 
-productRouter.get("/products", getProducts);
-productRouter.post("/products", addProduct);
-
-// productRouter
-//   .route("/products")
-//   .get((req, res) => {
-//     res.sendFile(filePath);
-//   })
-//   .post((req, res) => {
-//     console.log(req.body);
-//     res.send("data recieved");
-//   });
+productRouter.get("/products", verifyToken, getProducts);
+productRouter.post("/products", verifyToken, isAdmin, addProduct);
 
 export default productRouter;

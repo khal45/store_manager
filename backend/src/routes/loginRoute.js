@@ -1,11 +1,13 @@
 import "../middleware/authMiddleware.js";
-import { getLogin } from "../controllers/loginController.js";
+import {
+  getLogin,
+  postLogin,
+  createUser,
+} from "../controllers/loginController.js";
 import express from "express";
 import { fileURLToPath } from "url";
 import path from "path";
 import bodyParser from "body-parser";
-import passport from "passport";
-import session from "express-session";
 import dotenv from "dotenv";
 dotenv.config();
 
@@ -27,26 +29,8 @@ loginRouter.use(
 loginRouter.use(bodyParser.json());
 loginRouter.use(bodyParser.urlencoded({ extended: true }));
 
-loginRouter.use(
-  session({
-    secret: process.env.SESSION_SECRET,
-    resave: true,
-    saveUninitialized: true,
-    cookie: { secure: false },
-  })
-);
-
-loginRouter.use(passport.initialize());
-loginRouter.use(passport.session());
-
 loginRouter.get("/", getLogin);
-loginRouter.post(
-  "/",
-  passport.authenticate("local", {
-    session: false,
-    successRedirect: "/products",
-    failureRedirect: "/",
-  })
-);
+loginRouter.post("/", postLogin);
+loginRouter.post("/register", createUser);
 
 export default loginRouter;

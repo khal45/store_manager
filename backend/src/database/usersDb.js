@@ -29,6 +29,12 @@ const users = [
     role: "Attendant",
     password: "$2b$12$Ip7wYtwgv8sLZusoOixjTuLQSHq6pR0RreitGkD/EaDQQonCobAEu",
   },
+  {
+    id: "#420844",
+    username: "Jessica Jones",
+    role: "attendant",
+    password: "$2b$10$zyvVwYPtjuXZj3x0/cX/7uXvVEGEdFBG3uTVvRZIttSjhmpELTKI6",
+  },
 ];
 
 export default users;
