@@ -162,6 +162,14 @@ const products = [
     "price": "$240",
     "stock": 14,
     "time": "2024-12-09T09:24:34.167Z"
+  },
+  {
+    "id": "#551691",
+    "productName": "New Balance 5",
+    "description": "Stylish shoe",
+    "price": "$120",
+    "stock": 10,
+    "time": "2024-12-09T15:59:02.270Z"
   }
 ];
 
