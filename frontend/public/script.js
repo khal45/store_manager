@@ -49,7 +49,7 @@ mobileMenu.forEach((menu) => {
 });
 
 const saleElements = document.querySelectorAll(".sale");
-const showMore = document.querySelector(".show-more");
+// const showMore = document.querySelector(".show-more");
 
 saleElements.forEach((sale) => {
   sale.addEventListener("click", () => {
