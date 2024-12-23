@@ -23,7 +23,7 @@ const verifyToken = async (req, res, next) => {
 const isAdmin = async (req, res, next) => {
   try {
     const { role } = req.user;
-    if (role !== "Admin") return res.sendStatus(401);
+    if (role !== "Admin") return res.sendStatus(403);
     next();
   } catch (err) {
     console.log(err);

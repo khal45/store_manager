@@ -1,4 +1,5 @@
 import "../middleware/authMiddleware.js";
+import { verifyToken, isAdmin } from "../middleware/authMiddleware.js";
 import {
   getLogin,
   postLogin,
@@ -31,6 +32,6 @@ loginRouter.use(bodyParser.urlencoded({ extended: true }));
 
 loginRouter.get("/", getLogin);
 loginRouter.post("/", postLogin);
-loginRouter.post("/register", createUser);
+loginRouter.post("/register", verifyToken, isAdmin, createUser);
 
 export default loginRouter;

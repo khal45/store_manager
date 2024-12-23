@@ -1,6 +1,5 @@
 import users from "../database/usersDb.js";
-import idGenerator from "../../unique-id.js";
-import fs from "fs";
+import { v4 as uuidv4 } from "uuid";
 import { hashSync, compareSync } from "bcrypt";
 import jwt from "jsonwebtoken";
 import dotenv from "dotenv";
@@ -13,7 +12,7 @@ const __dirname = path.dirname(__filename);
 const filePath = path.join(__dirname, "../../../frontend/views/login.html");
 
 const accessKey = process.env.ACCESS_TOKEN_SECRET;
-const uniqueId = idGenerator();
+const uniqueId = uuidv4();
 
 const getLogin = (req, res) => {
   res.sendFile(filePath);
@@ -24,7 +23,7 @@ const postLogin = (req, res) => {
   const user = users.find((user) => user.username === username);
 
   if (!user) {
-    return res.status(400).json({ message: "user does not exist" });
+    return res.status(401).json({ message: "user does not exist" });
   }
 
   const passwordsMatch = compareSync(password, user.password);
@@ -44,7 +43,7 @@ const postLogin = (req, res) => {
     });
     return res.redirect("/products");
   } else {
-    return res.status(400).json({ message: "incorrect password" });
+    return res.status(401).json({ message: "incorrect password" });
   }
 };
 
@@ -55,7 +54,7 @@ const createUser = (req, res, next) => {
   const userExists = users.find((user) => user.username === username);
 
   if (userExists) {
-    res.status(500).json({
+    res.status(409).json({
       status: "Fail",
       message: "User already exists!",
     });
@@ -68,13 +67,6 @@ const createUser = (req, res, next) => {
       password: hashedPassword,
     };
     users.push(newUser);
-    const filePath = path.join(__dirname, "../database/usersDb.js");
-    const dataToWrite = `const users = ${JSON.stringify(
-      users,
-      null,
-      2
-    )};\n\nexport default users;`;
-    fs.writeFileSync(filePath, dataToWrite);
     res.json(newUser);
   }
 };

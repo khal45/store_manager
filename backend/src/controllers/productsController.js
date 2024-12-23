@@ -1,10 +1,9 @@
-import fs from "fs";
-import idGenerator from "../../unique-id.js";
+import { v4 as uuidv4 } from "uuid";
 import products from "../database/productsDb.js";
 import { fileURLToPath } from "url";
 import path from "path";
 
-const uniqueId = idGenerator();
+const uniqueId = uuidv4();
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -26,15 +25,6 @@ const addProduct = (req, res) => {
     time: new Date(),
   };
   products.push(newProduct);
-
-  const filePath = path.join(__dirname, "../database/productsDb.js");
-  const dataToWrite = `const products = ${JSON.stringify(
-    products,
-    null,
-    2
-  )};\n\nexport default products;`;
-
-  fs.writeFileSync(filePath, dataToWrite);
   res.json({ message: "product added successfully" });
 };
 
