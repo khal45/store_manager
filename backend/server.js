@@ -3,6 +3,9 @@ import {
   productRouter,
   logoutRouter,
   userRouter,
+  salesRouter,
+  saleDetailsRouter,
+  cartRouter,
 } from "./src/routes/index.js";
 import express from "express";
 import cookieParser from "cookie-parser";
@@ -16,6 +19,9 @@ app.use("/", loginRouter);
 app.use("/", productRouter);
 app.use("/", logoutRouter);
 app.use("/", userRouter);
+app.use("/", salesRouter);
+app.use("/", saleDetailsRouter);
+app.use("/", cartRouter);
 
 // start the server
 app.listen(port, () => {
