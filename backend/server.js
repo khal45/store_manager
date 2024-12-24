@@ -2,6 +2,7 @@ import {
   loginRouter,
   productRouter,
   logoutRouter,
+  userRouter,
 } from "./src/routes/index.js";
 import express from "express";
 import cookieParser from "cookie-parser";
@@ -14,6 +15,7 @@ const port = process.env.PORT || 3000;
 app.use("/", loginRouter);
 app.use("/", productRouter);
 app.use("/", logoutRouter);
+app.use("/", userRouter);
 
 // start the server
 app.listen(port, () => {

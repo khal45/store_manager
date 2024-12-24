@@ -47,28 +47,4 @@ const postLogin = (req, res) => {
   }
 };
 
-// The following route does not have a UI and is only available to the admin
-
-const createUser = (req, res, next) => {
-  const { username, password, role } = req.body;
-  const userExists = users.find((user) => user.username === username);
-
-  if (userExists) {
-    res.status(409).json({
-      status: "Fail",
-      message: "User already exists!",
-    });
-  } else {
-    const hashedPassword = hashSync(password, 10);
-    const newUser = {
-      id: uniqueId,
-      username: username,
-      role: role,
-      password: hashedPassword,
-    };
-    users.push(newUser);
-    res.json(newUser);
-  }
-};
-
-export { getLogin, postLogin, createUser };
+export { getLogin, postLogin };

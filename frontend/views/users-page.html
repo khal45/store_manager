@@ -12,7 +12,7 @@
       <header>
         <div class="nav-container">
           <nav>
-            <a href="products.html">
+            <a href="/products">
               <div class="logo">
                 <img src="/svgs/shop-store-svgrepo-com.svg" alt="svg logo" />
                 <div class="text">Store Manager</div>
@@ -25,7 +25,7 @@
             </a>
             <ul class="desktop-links">
               <li>
-                <a href="products.html"
+                <a href="/products"
                   ><img
                     src="/svgs/product-service-campaign-item-svgrepo-com.svg"
                     alt="dashboard logo"
@@ -70,7 +70,7 @@
               <i class="fa fa-caret-down" id="dropdown" aria-hidden="true"></i>
             </div>
             <div id="user-options" class="user-options user-options-hidden">
-              <a href="login.html">logout</a>
+              <a href="/logout">logout</a>
             </div>
           </nav>
         </div>
@@ -91,11 +91,11 @@
           </div>
         </div>
         <div id="user-options-mobile" class="user-options-mobile">
-          <a href="login.html">logout</a>
+          <a href="/logout">logout</a>
         </div>
         <ul class="mobile-links">
           <li>
-            <a href="products.html">
+            <a href="/products">
               <div class="nav-item">
                 <img
                   src="/svgs/product-service-campaign-item-svgrepo-com.svg"
@@ -137,28 +137,30 @@
       <section id="user-section" class="user-section">
         <div class="create-attendant">
           <h1>Add Attendant</h1>
-          <div>
-            <div class="username-container">
-              <input type="email" id="email" name="email" placeholder="email" />
+          <form action="/register" method="post">
+            <div>
+              <div class="username-container">
+                <input
+                  type="text"
+                  id="username"
+                  name="username"
+                  placeholder="username"
+                />
+              </div>
+              <div class="username-container">
+                <input
+                  type="password"
+                  id="password"
+                  name="password"
+                  placeholder="password"
+                />
+              </div>
+              <div class="username-container">
+                <input type="text" id="role" name="role" placeholder="role" />
+              </div>
             </div>
-            <div class="username-container">
-              <input
-                type="text"
-                id="username"
-                name="username"
-                placeholder="username"
-              />
-            </div>
-            <div class="username-container">
-              <input
-                type="password"
-                id="password"
-                name="password"
-                placeholder="password"
-              />
-            </div>
-          </div>
-          <button>Create Account</button>
+            <button>Create Account</button>
+          </form>
         </div>
         <div class="user-general">
           <div class="div-4">
