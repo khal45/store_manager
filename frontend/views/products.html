@@ -3,16 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="/public/styles/styles-general.css"
-    />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="/public/styles/products-styles.css"
-    />
+    <link rel="stylesheet" type="text/css" href="/styles/styles-general.css" />
+    <link rel="stylesheet" type="text/css" href="/styles/products-styles.css" />
     <title>Products page</title>
   </head>
   <body>
@@ -20,12 +12,9 @@
       <header>
         <div class="nav-container">
           <nav>
-            <a href="products.html">
+            <a href="/products">
               <div class="logo">
-                <img
-                  src="/public/svgs/shop-store-svgrepo-com.svg"
-                  alt="svg logo"
-                />
+                <img src="/svgs/shop-store-svgrepo-com.svg" alt="svg logo" />
                 <div class="text">Store Manager</div>
               </div>
             </a>
@@ -36,36 +25,36 @@
             </a>
             <ul class="desktop-links">
               <li>
-                <a href="products.html"
+                <a href="/products"
                   ><img
-                    src="/public/svgs/product-service-campaign-item-svgrepo-com.svg"
+                    src="/svgs/product-service-campaign-item-svgrepo-com.svg"
                     alt="dashboard logo"
                   />
                   <div>Products</div>
                 </a>
               </li>
               <li>
-                <a href="sales-page.html"
+                <a href="/sales"
                   ><img
-                    src="/public/svgs/verification-svgrepo-com.svg"
+                    src="/svgs/verification-svgrepo-com.svg"
                     alt="dashboard logo"
                   />
                   <div>Sales</div>
                 </a>
               </li>
               <li>
-                <a href="#"
+                <a href="/cart"
                   ><img
-                    src="/public/svgs/verification-svgrepo-com.svg"
+                    src="/svgs/verification-svgrepo-com.svg"
                     alt="dashboard logo"
                   />
                   <div>Cart</div>
                 </a>
               </li>
               <li>
-                <a href="users-page.html"
+                <a href="/users"
                   ><img
-                    src="/public/svgs/users-svgrepo-com.svg"
+                    src="/svgs/users-svgrepo-com.svg"
                     alt="dashboard logo"
                   />
                   <div>Users</div>
@@ -81,7 +70,7 @@
               <i class="fa fa-caret-down" id="dropdown" aria-hidden="true"></i>
             </div>
             <div id="user-options" class="user-options user-options-hidden">
-              <a href="login.html">logout</a>
+              <a href="/logout">logout</a>
             </div>
           </nav>
         </div>
@@ -102,14 +91,14 @@
           </div>
         </div>
         <div id="user-options-mobile" class="user-options-mobile">
-          <a href="login.html">logout</a>
+          <a href="/logout">logout</a>
         </div>
         <ul class="mobile-links">
           <li>
-            <a href="products.html">
+            <a href="/products">
               <div class="nav-item">
                 <img
-                  src="/public/svgs/product-service-campaign-item-svgrepo-com.svg"
+                  src="/svgs/product-service-campaign-item-svgrepo-com.svg"
                   alt="dashboard logo"
                 />
                 <div>Products</div>
@@ -117,10 +106,10 @@
             </a>
           </li>
           <li>
-            <a href="sales-page.html">
+            <a href="/sales">
               <div class="nav-item">
                 <img
-                  src="/public/svgs/verification-svgrepo-com.svg"
+                  src="/svgs/verification-svgrepo-com.svg"
                   alt="dashboard logo"
                 />
                 <div>Sales</div>
@@ -128,23 +117,20 @@
             </a>
           </li>
           <li>
-            <a href="#">
+            <a href="/cart">
               <div class="nav-item">
                 <img
-                  src="/public/svgs/users-svgrepo-com.svg"
+                  src="/svgs/verification-svgrepo-com.svg"
                   alt="dashboard logo"
                 />
-                <div>Customers</div>
+                <div>Cart</div>
               </div>
             </a>
           </li>
           <li>
-            <a href="users-page.html">
+            <a href="/users">
               <div class="nav-item">
-                <img
-                  src="/public/svgs/users-svgrepo-com.svg"
-                  alt="dashboard logo"
-                />
+                <img src="/svgs/users-svgrepo-com.svg" alt="dashboard logo" />
                 <div>Users</div>
               </div>
             </a>
@@ -158,12 +144,12 @@
             <div class="mobile-products">
               <!-- <button class="search-btn">
                 <img
-                  src="/public/svgs/search-svgrepo-com.svg"
+                  src="/svgs/search-svgrepo-com.svg"
                   alt="search-btn"
                 />
               </button> -->
               <button class="add-btn" id="add-btn">
-                <img src="/public/svgs/plus-svgrepo-com.svg" alt="add-btn" />
+                <img src="/svgs/plus-svgrepo-com.svg" alt="add-btn" />
               </button>
             </div>
             <div class="desktop-products">
@@ -196,58 +182,65 @@
             <div class="create-product-container" id="create-product-container">
               <button class="close-window" id="close-window">
                 <img
-                  src="/public/svgs/multiply-svgrepo-com.svg"
+                  src="/svgs/multiply-svgrepo-com.svg"
                   alt="multiply-svgrepo-com"
                 />
               </button>
-              <form id="create-form-mobile" class="create-form">
-                <input
-                  type="search"
-                  id="create-input-desktop"
-                  name="search"
-                  class="mobile-input"
-                  placeholder="Product Name"
-                />
-              </form>
-              <form id="product-description" class="product-description">
-                <textarea
-                  name="product-description"
-                  id="description-text"
-                  class="description-text"
-                  placeholder="Description"
-                ></textarea>
-              </form>
-              <div class="price-stock-container">
-                <form id="price" class="div-1 price">
+              <form action="/products" method="post">
+                <div class="create-form">
                   <input
                     type="text"
-                    name="price"
-                    id="price"
-                    placeholder="price"
+                    id="create-input-desktop"
+                    name="productName"
+                    class="mobile-input"
+                    placeholder="Product Name"
                   />
-                </form>
-                <form id="stock" class="div-1 stock">
-                  <input
+                </div>
+                <div class="product-description">
+                  <textarea
                     type="text"
-                    name="stock"
-                    id="stock"
-                    placeholder="stock"
-                  />
-                </form>
-              </div>
-              <div class="flex-container">
-                <button id="create-product" class="create-product-btn">
-                  Create Product <i class="fa fa-plus" aria-hidden="true"></i>
-                </button>
-              </div>
+                    name="productDescription"
+                    id="description-text"
+                    class="description-text"
+                    placeholder="Description"
+                  ></textarea>
+                </div>
+                <div class="price-stock-container">
+                  <div class="div-1 price">
+                    <input
+                      type="text"
+                      name="price"
+                      id="price"
+                      placeholder="price"
+                    />
+                  </div>
+                  <div class="div-1 stock">
+                    <input
+                      type="text"
+                      name="stock"
+                      id="stock"
+                      placeholder="stock"
+                    />
+                  </div>
+                </div>
+                <div class="flex-container">
+                  <button
+                    type="submit"
+                    id="create-product"
+                    class="create-product-btn"
+                  >
+                    Create Product <i class="fa fa-plus" aria-hidden="true"></i>
+                  </button>
+                </div>
+              </form>
             </div>
           </div>
           <div class="products-display-container">
             <div class="products-display">
-              <a href="cart-page.html" class="item-anchor">
+              <a href="/cart" class="item-anchor">
                 <div class="item">
                   <div class="img-div">
-                    <img src="/public/images/Nike shoe.jpg" alt="nike shoe" />
+                    <img src="/images/Nike shoe.jpg" alt="nike shoe" />
                   </div>
                   <div class="info">
                     <h5>Nike Dunk High</h5>
@@ -265,13 +258,10 @@
                   </div>
                   <div class="product-card">
                     <div class="card-header">
-                      <img
-                        src="/public/svgs/rhombus-svgrepo-com.svg"
-                        alt="rhombus"
-                      />
+                      <img src="/svgs/rhombus-svgrepo-com.svg" alt="rhombus" />
                       <p class="text-small">productCard</p>
                       <img
-                        src="/public/svgs/caret-down-thin-svgrepo-com.svg"
+                        src="/svgs/caret-down-thin-svgrepo-com.svg"
                         alt="caret-down"
                       />
                     </div>
@@ -293,10 +283,10 @@
                   </div>
                 </div>
               </a>
-              <a href="cart-page.html" class="item-anchor">
+              <a href="/cart" class="item-anchor">
                 <div class="item">
                   <div class="img-div">
-                    <img src="/public/images/Nike shoe.jpg" alt="nike shoe" />
+                    <img src="/images/Nike shoe.jpg" alt="nike shoe" />
                   </div>
                   <div class="info">
                     <h5>Nike Dunk High</h5>
@@ -314,13 +304,10 @@
                   </div>
                   <div class="product-card">
                     <div class="card-header">
-                      <img
-                        src="/public/svgs/rhombus-svgrepo-com.svg"
-                        alt="rhombus"
-                      />
+                      <img src="/svgs/rhombus-svgrepo-com.svg" alt="rhombus" />
                       <p class="text-small">productCard</p>
                       <img
-                        src="/public/svgs/caret-down-thin-svgrepo-com.svg"
+                        src="/svgs/caret-down-thin-svgrepo-com.svg"
                         alt="caret-down"
                       />
                     </div>
@@ -342,10 +329,10 @@
                   </div>
                 </div>
               </a>
-              <a href="cart-page.html" class="item-anchor">
+              <a href="/cart" class="item-anchor">
                 <div class="item">
                   <div class="img-div">
-                    <img src="/public/images/Nike shoe.jpg" alt="nike shoe" />
+                    <img src="/images/Nike shoe.jpg" alt="nike shoe" />
                   </div>
                   <div class="info">
                     <h5>Nike Dunk High</h5>
@@ -363,13 +350,10 @@
                   </div>
                   <div class="product-card">
                     <div class="card-header">
-                      <img
-                        src="/public/svgs/rhombus-svgrepo-com.svg"
-                        alt="rhombus"
-                      />
+                      <img src="/svgs/rhombus-svgrepo-com.svg" alt="rhombus" />
                       <p class="text-small">productCard</p>
                       <img
-                        src="/public/svgs/caret-down-thin-svgrepo-com.svg"
+                        src="/svgs/caret-down-thin-svgrepo-com.svg"
                         alt="caret-down"
                       />
                     </div>
@@ -391,10 +375,10 @@
                   </div>
                 </div>
               </a>
-              <a href="cart-page.html" class="item-anchor">
+              <a href="/cart" class="item-anchor">
                 <div class="item">
                   <div class="img-div">
-                    <img src="/public/images/Nike shoe.jpg" alt="nike shoe" />
+                    <img src="/images/Nike shoe.jpg" alt="nike shoe" />
                   </div>
                   <div class="info">
                     <h5>Nike Dunk High</h5>
@@ -412,13 +396,10 @@
                   </div>
                   <div class="product-card">
                     <div class="card-header">
-                      <img
-                        src="/public/svgs/rhombus-svgrepo-com.svg"
-                        alt="rhombus"
-                      />
+                      <img src="/svgs/rhombus-svgrepo-com.svg" alt="rhombus" />
                       <p class="text-small">productCard</p>
                       <img
-                        src="/public/svgs/caret-down-thin-svgrepo-com.svg"
+                        src="/svgs/caret-down-thin-svgrepo-com.svg"
                         alt="caret-down"
                       />
                     </div>
@@ -440,10 +421,10 @@
                   </div>
                 </div>
               </a>
-              <a href="cart-page.html" class="item-anchor">
+              <a href="/cart" class="item-anchor">
                 <div class="item">
                   <div class="img-div">
-                    <img src="/public/images/Nike shoe.jpg" alt="nike shoe" />
+                    <img src="/images/Nike shoe.jpg" alt="nike shoe" />
                   </div>
                   <div class="info">
                     <h5>Nike Dunk High</h5>
@@ -461,13 +442,10 @@
                   </div>
                   <div class="product-card">
                     <div class="card-header">
-                      <img
-                        src="/public/svgs/rhombus-svgrepo-com.svg"
-                        alt="rhombus"
-                      />
+                      <img src="/svgs/rhombus-svgrepo-com.svg" alt="rhombus" />
                       <p class="text-small">productCard</p>
                       <img
-                        src="/public/svgs/caret-down-thin-svgrepo-com.svg"
+                        src="/svgs/caret-down-thin-svgrepo-com.svg"
                         alt="caret-down"
                       />
                     </div>
@@ -489,10 +467,10 @@
                   </div>
                 </div>
               </a>
-              <a href="cart-page.html" class="item-anchor">
+              <a href="/cart" class="item-anchor">
                 <div class="item">
                   <div class="img-div">
-                    <img src="/public/images/Nike shoe.jpg" alt="nike shoe" />
+                    <img src="/images/Nike shoe.jpg" alt="nike shoe" />
                   </div>
                   <div class="info">
                     <h5>Nike Dunk High</h5>
@@ -510,13 +488,10 @@
                   </div>
                   <div class="product-card">
                     <div class="card-header">
-                      <img
-                        src="/public/svgs/rhombus-svgrepo-com.svg"
-                        alt="rhombus"
-                      />
+                      <img src="/svgs/rhombus-svgrepo-com.svg" alt="rhombus" />
                       <p class="text-small">productCard</p>
                       <img
-                        src="/public/svgs/caret-down-thin-svgrepo-com.svg"
+                        src="/svgs/caret-down-thin-svgrepo-com.svg"
                         alt="caret-down"
                       />
                     </div>
@@ -538,10 +513,10 @@
                   </div>
                 </div>
               </a>
-              <a href="cart-page.html" class="item-anchor">
+              <a href="/cart" class="item-anchor">
                 <div class="item">
                   <div class="img-div">
-                    <img src="/public/images/Nike shoe.jpg" alt="nike shoe" />
+                    <img src="/images/Nike shoe.jpg" alt="nike shoe" />
                   </div>
                   <div class="info">
                     <h5>Nike Dunk High</h5>
@@ -559,13 +534,10 @@
                   </div>
                   <div class="product-card">
                     <div class="card-header">
-                      <img
-                        src="/public/svgs/rhombus-svgrepo-com.svg"
-                        alt="rhombus"
-                      />
+                      <img src="/svgs/rhombus-svgrepo-com.svg" alt="rhombus" />
                       <p class="text-small">productCard</p>
                       <img
-                        src="/public/svgs/caret-down-thin-svgrepo-com.svg"
+                        src="/svgs/caret-down-thin-svgrepo-com.svg"
                         alt="caret-down"
                       />
                     </div>
@@ -587,10 +559,10 @@
                   </div>
                 </div>
               </a>
-              <a href="cart-page.html" class="item-anchor">
+              <a href="/cart" class="item-anchor">
                 <div class="item">
                   <div class="img-div">
-                    <img src="/public/images/Nike shoe.jpg" alt="nike shoe" />
+                    <img src="/images/Nike shoe.jpg" alt="nike shoe" />
                   </div>
                   <div class="info">
                     <h5>Nike Dunk High</h5>
@@ -608,13 +580,10 @@
                   </div>
                   <div class="product-card">
                     <div class="card-header">
-                      <img
-                        src="/public/svgs/rhombus-svgrepo-com.svg"
-                        alt="rhombus"
-                      />
+                      <img src="/svgs/rhombus-svgrepo-com.svg" alt="rhombus" />
                       <p class="text-small">productCard</p>
                       <img
-                        src="/public/svgs/caret-down-thin-svgrepo-com.svg"
+                        src="/svgs/caret-down-thin-svgrepo-com.svg"
                         alt="caret-down"
                       />
                     </div>
@@ -636,10 +605,10 @@
                   </div>
                 </div>
               </a>
-              <a href="cart-page.html" class="item-anchor">
+              <a href="/cart" class="item-anchor">
                 <div class="item">
                   <div class="img-div">
-                    <img src="/public/images/Nike shoe.jpg" alt="nike shoe" />
+                    <img src="/images/Nike shoe.jpg" alt="nike shoe" />
                   </div>
                   <div class="info">
                     <h5>Nike Dunk High</h5>
@@ -657,13 +626,10 @@
                   </div>
                   <div class="product-card">
                     <div class="card-header">
-                      <img
-                        src="/public/svgs/rhombus-svgrepo-com.svg"
-                        alt="rhombus"
-                      />
+                      <img src="/svgs/rhombus-svgrepo-com.svg" alt="rhombus" />
                       <p class="text-small">productCard</p>
                       <img
-                        src="/public/svgs/caret-down-thin-svgrepo-com.svg"
+                        src="/svgs/caret-down-thin-svgrepo-com.svg"
                         alt="caret-down"
                       />
                     </div>
@@ -685,10 +651,10 @@
                   </div>
                 </div>
               </a>
-              <a href="cart-page.html" class="item-anchor">
+              <a href="/cart" class="item-anchor">
                 <div class="item">
                   <div class="img-div">
-                    <img src="/public/images/Nike shoe.jpg" alt="nike shoe" />
+                    <img src="/images/Nike shoe.jpg" alt="nike shoe" />
                   </div>
                   <div class="info">
                     <h5>Nike Dunk High</h5>
@@ -706,13 +672,10 @@
                   </div>
                   <div class="product-card">
                     <div class="card-header">
-                      <img
-                        src="/public/svgs/rhombus-svgrepo-com.svg"
-                        alt="rhombus"
-                      />
+                      <img src="/svgs/rhombus-svgrepo-com.svg" alt="rhombus" />
                       <p class="text-small">productCard</p>
                       <img
-                        src="/public/svgs/caret-down-thin-svgrepo-com.svg"
+                        src="/svgs/caret-down-thin-svgrepo-com.svg"
                         alt="caret-down"
                       />
                     </div>
@@ -734,10 +697,10 @@
                   </div>
                 </div>
               </a>
-              <a href="cart-page.html" class="item-anchor">
+              <a href="/cart" class="item-anchor">
                 <div class="item">
                   <div class="img-div">
-                    <img src="/public/images/Nike shoe.jpg" alt="nike shoe" />
+                    <img src="/images/Nike shoe.jpg" alt="nike shoe" />
                   </div>
                   <div class="info">
                     <h5>Nike Dunk High</h5>
@@ -755,13 +718,10 @@
                   </div>
                   <div class="product-card">
                     <div class="card-header">
-                      <img
-                        src="/public/svgs/rhombus-svgrepo-com.svg"
-                        alt="rhombus"
-                      />
+                      <img src="/svgs/rhombus-svgrepo-com.svg" alt="rhombus" />
                       <p class="text-small">productCard</p>
                       <img
-                        src="/public/svgs/caret-down-thin-svgrepo-com.svg"
+                        src="/svgs/caret-down-thin-svgrepo-com.svg"
                         alt="caret-down"
                       />
                     </div>
@@ -783,10 +743,10 @@
                   </div>
                 </div>
               </a>
-              <a href="cart-page.html" class="item-anchor">
+              <a href="/cart" class="item-anchor">
                 <div class="item">
                   <div class="img-div">
-                    <img src="/public/images/Nike shoe.jpg" alt="nike shoe" />
+                    <img src="/images/Nike shoe.jpg" alt="nike shoe" />
                   </div>
                   <div class="info">
                     <h5>Nike Dunk High</h5>
@@ -804,13 +764,10 @@
                   </div>
                   <div class="product-card">
                     <div class="card-header">
-                      <img
-                        src="/public/svgs/rhombus-svgrepo-com.svg"
-                        alt="rhombus"
-                      />
+                      <img src="/svgs/rhombus-svgrepo-com.svg" alt="rhombus" />
                       <p class="text-small">productCard</p>
                       <img
-                        src="/public/svgs/caret-down-thin-svgrepo-com.svg"
+                        src="/svgs/caret-down-thin-svgrepo-com.svg"
                         alt="caret-down"
                       />
                     </div>
@@ -832,10 +789,10 @@
                   </div>
                 </div>
               </a>
-              <a href="cart-page.html" class="item-anchor">
+              <a href="/cart" class="item-anchor">
                 <div class="item">
                   <div class="img-div">
-                    <img src="/public/images/Nike shoe.jpg" alt="nike shoe" />
+                    <img src="/images/Nike shoe.jpg" alt="nike shoe" />
                   </div>
                   <div class="info">
                     <h5>Nike Dunk High</h5>
@@ -853,13 +810,10 @@
                   </div>
                   <div class="product-card">
                     <div class="card-header">
-                      <img
-                        src="/public/svgs/rhombus-svgrepo-com.svg"
-                        alt="rhombus"
-                      />
+                      <img src="/svgs/rhombus-svgrepo-com.svg" alt="rhombus" />
                       <p class="text-small">productCard</p>
                       <img
-                        src="/public/svgs/caret-down-thin-svgrepo-com.svg"
+                        src="/svgs/caret-down-thin-svgrepo-com.svg"
                         alt="caret-down"
                       />
                     </div>
@@ -881,10 +835,10 @@
                   </div>
                 </div>
               </a>
-              <a href="cart-page.html" class="item-anchor">
+              <a href="/cart" class="item-anchor">
                 <div class="item">
                   <div class="img-div">
-                    <img src="/public/images/Nike shoe.jpg" alt="nike shoe" />
+                    <img src="/images/Nike shoe.jpg" alt="nike shoe" />
                   </div>
                   <div class="info">
                     <h5>Nike Dunk High</h5>
@@ -902,13 +856,10 @@
                   </div>
                   <div class="product-card">
                     <div class="card-header">
-                      <img
-                        src="/public/svgs/rhombus-svgrepo-com.svg"
-                        alt="rhombus"
-                      />
+                      <img src="/svgs/rhombus-svgrepo-com.svg" alt="rhombus" />
                       <p class="text-small">productCard</p>
                       <img
-                        src="/public/svgs/caret-down-thin-svgrepo-com.svg"
+                        src="/svgs/caret-down-thin-svgrepo-com.svg"
                         alt="caret-down"
                       />
                     </div>
@@ -936,6 +887,6 @@
         <!-- <div class="test"></div> -->
       </section>
     </div>
-    <script src="../public/script.js"></script>
+    <script src="/script.js"></script>
   </body>
 </html>

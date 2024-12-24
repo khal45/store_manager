@@ -3,16 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="/public/styles/styles-general.css"
-    />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="/public/styles/users-styles.css"
-    />
+    <link rel="stylesheet" type="text/css" href="/styles/styles-general.css" />
+    <link rel="stylesheet" type="text/css" href="/styles/users-styles.css" />
     <title>Users page</title>
   </head>
   <body>
@@ -20,12 +12,9 @@
       <header>
         <div class="nav-container">
           <nav>
-            <a href="products.html">
+            <a href="/products">
               <div class="logo">
-                <img
-                  src="/public/svgs/shop-store-svgrepo-com.svg"
-                  alt="svg logo"
-                />
+                <img src="/svgs/shop-store-svgrepo-com.svg" alt="svg logo" />
                 <div class="text">Store Manager</div>
               </div>
             </a>
@@ -36,18 +25,18 @@
             </a>
             <ul class="desktop-links">
               <li>
-                <a href="products.html"
+                <a href="/products"
                   ><img
-                    src="/public/svgs/product-service-campaign-item-svgrepo-com.svg"
+                    src="/svgs/product-service-campaign-item-svgrepo-com.svg"
                     alt="dashboard logo"
                   />
                   <div>Products</div>
                 </a>
               </li>
               <li>
-                <a href="sales-page.html"
+                <a href="/sales"
                   ><img
-                    src="/public/svgs/verification-svgrepo-com.svg"
+                    src="/svgs/verification-svgrepo-com.svg"
                     alt="dashboard logo"
                   />
                   <div>Sales</div>
@@ -56,7 +45,7 @@
               <li>
                 <a href="#"
                   ><img
-                    src="/public/svgs/verification-svgrepo-com.svg"
+                    src="/svgs/verification-svgrepo-com.svg"
                     alt="dashboard logo"
                   />
                   <div>Cart</div>
@@ -65,7 +54,7 @@
               <li>
                 <a href="users-page.html"
                   ><img
-                    src="/public/svgs/users-svgrepo-com.svg"
+                    src="/svgs/users-svgrepo-com.svg"
                     alt="dashboard logo"
                   />
                   <div>Users</div>
@@ -81,7 +70,7 @@
               <i class="fa fa-caret-down" id="dropdown" aria-hidden="true"></i>
             </div>
             <div id="user-options" class="user-options user-options-hidden">
-              <a href="login.html">logout</a>
+              <a href="/logout">logout</a>
             </div>
           </nav>
         </div>
@@ -102,14 +91,14 @@
           </div>
         </div>
         <div id="user-options-mobile" class="user-options-mobile">
-          <a href="login.html">logout</a>
+          <a href="/logout">logout</a>
         </div>
         <ul class="mobile-links">
           <li>
-            <a href="products.html">
+            <a href="/products">
               <div class="nav-item">
                 <img
-                  src="/public/svgs/product-service-campaign-item-svgrepo-com.svg"
+                  src="/svgs/product-service-campaign-item-svgrepo-com.svg"
                   alt="dashboard logo"
                 />
                 <div>Products</div>
@@ -117,10 +106,10 @@
             </a>
           </li>
           <li>
-            <a href="sales-page.html">
+            <a href="/sales">
               <div class="nav-item">
                 <img
-                  src="/public/svgs/verification-svgrepo-com.svg"
+                  src="/svgs/verification-svgrepo-com.svg"
                   alt="dashboard logo"
                 />
                 <div>Sales</div>
@@ -128,23 +117,20 @@
             </a>
           </li>
           <li>
-            <a href="#">
+            <a href="/cart">
               <div class="nav-item">
                 <img
-                  src="/public/svgs/users-svgrepo-com.svg"
+                  src="/svgs/verification-svgrepo-com.svg"
                   alt="dashboard logo"
                 />
-                <div>Customers</div>
+                <div>Cart</div>
               </div>
             </a>
           </li>
           <li>
             <a href="users-page.html">
               <div class="nav-item">
-                <img
-                  src="/public/svgs/users-svgrepo-com.svg"
-                  alt="dashboard logo"
-                />
+                <img src="/svgs/users-svgrepo-com.svg" alt="dashboard logo" />
                 <div>Users</div>
               </div>
             </a>
@@ -154,28 +140,30 @@
       <section id="user-section" class="user-section">
         <div class="create-attendant">
           <h1>Add Attendant</h1>
-          <div>
-            <div class="username-container">
-              <input type="email" id="email" name="email" placeholder="email" />
+          <form action="/register" method="post">
+            <div>
+              <div class="username-container">
+                <input
+                  type="text"
+                  id="username"
+                  name="username"
+                  placeholder="username"
+                />
+              </div>
+              <div class="username-container">
+                <input
+                  type="password"
+                  id="password"
+                  name="password"
+                  placeholder="password"
+                />
+              </div>
+              <div class="username-container">
+                <input type="text" id="role" name="role" placeholder="role" />
+              </div>
             </div>
-            <div class="username-container">
-              <input
-                type="text"
-                id="username"
-                name="username"
-                placeholder="username"
-              />
-            </div>
-            <div class="username-container">
-              <input
-                type="password"
-                id="password"
-                name="password"
-                placeholder="password"
-              />
-            </div>
-          </div>
-          <button>Create Account</button>
+            <button>Create Account</button>
+          </form>
         </div>
         <div class="user-general">
           <div class="div-4">
@@ -195,7 +183,7 @@
               </form>
             </div>
             <button class="add-user" id="add-user">
-              <img src="/public/svgs/plus white.svg" alt="plus-white" />
+              <img src="/svgs/plus white.svg" alt="plus-white" />
               Add
             </button>
           </div>
@@ -233,7 +221,7 @@
                   alt="user-image-mobile"
                 />
                 <h2>
-                  <a href="sales-page.html" class="user-link">Vanessa Satone</a>
+                  <a href="/sales" class="user-link">Vanessa Satone</a>
                 </h2>
               </div>
               <h2 class="role">Attendant</h2>
@@ -248,7 +236,7 @@
                   alt="user-image-mobile"
                 />
                 <h2>
-                  <a href="sales-page.html" class="user-link">Bob Lious</a>
+                  <a href="/sales" class="user-link">Bob Lious</a>
                 </h2>
               </div>
               <h2 class="role">Attendant</h2>
@@ -263,7 +251,7 @@
                   alt="user-image-mobile"
                 />
                 <h2>
-                  <a href="sales-page.html" class="user-link">Joseph Joestar</a>
+                  <a href="/sales" class="user-link">Joseph Joestar</a>
                 </h2>
               </div>
               <h2 class="role">Attendant</h2>
@@ -278,7 +266,7 @@
                   alt="user-image-mobile"
                 />
                 <h2>
-                  <a href="sales-page.html" class="user-link">Henry Kelvin</a>
+                  <a href="/sales" class="user-link">Henry Kelvin</a>
                 </h2>
               </div>
               <h2 class="role">Attendant</h2>
@@ -288,6 +276,6 @@
         </div>
       </section>
     </div>
-    <script src="/public/script.js"></script>
+    <script src="/script.js"></script>
   </body>
 </html>

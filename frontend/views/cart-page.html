@@ -3,16 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="/public/styles/styles-general.css"
-    />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="/public/styles/cart-styles.css"
-    />
+    <link rel="stylesheet" type="text/css" href="/styles/styles-general.css" />
+    <link rel="stylesheet" type="text/css" href="/styles/cart-styles.css" />
     <title>cart-page</title>
   </head>
   <body>
@@ -20,12 +12,9 @@
       <header>
         <div class="nav-container">
           <nav>
-            <a href="products.html">
+            <a href="/products">
               <div class="logo">
-                <img
-                  src="/public/svgs/shop-store-svgrepo-com.svg"
-                  alt="svg logo"
-                />
+                <img src="/svgs/shop-store-svgrepo-com.svg" alt="svg logo" />
                 <div class="text">Store Manager</div>
               </div>
             </a>
@@ -36,36 +25,36 @@
             </a>
             <ul class="desktop-links">
               <li>
-                <a href="products.html"
+                <a href="/products"
                   ><img
-                    src="/public/svgs/product-service-campaign-item-svgrepo-com.svg"
+                    src="/svgs/product-service-campaign-item-svgrepo-com.svg"
                     alt="dashboard logo"
                   />
                   <div>Products</div>
                 </a>
               </li>
               <li>
-                <a href="sales-page.html"
+                <a href="/sales"
                   ><img
-                    src="/public/svgs/verification-svgrepo-com.svg"
+                    src="/svgs/verification-svgrepo-com.svg"
                     alt="dashboard logo"
                   />
                   <div>Sales</div>
                 </a>
               </li>
               <li>
-                <a href="#"
+                <a href="/cart"
                   ><img
-                    src="/public/svgs/verification-svgrepo-com.svg"
+                    src="/svgs/verification-svgrepo-com.svg"
                     alt="dashboard logo"
                   />
                   <div>Cart</div>
                 </a>
               </li>
               <li>
-                <a href="users-page.html"
+                <a href="/users"
                   ><img
-                    src="/public/svgs/users-svgrepo-com.svg"
+                    src="/svgs/users-svgrepo-com.svg"
                     alt="dashboard logo"
                   />
                   <div>Users</div>
@@ -81,7 +70,7 @@
               <i class="fa fa-caret-down" id="dropdown" aria-hidden="true"></i>
             </div>
             <div id="user-options" class="user-options user-options-hidden">
-              <a href="login.html">logout</a>
+              <a href="/logout">logout</a>
             </div>
           </nav>
         </div>
@@ -102,14 +91,14 @@
           </div>
         </div>
         <div id="user-options-mobile" class="user-options-mobile">
-          <a href="login.html">logout</a>
+          <a href="/logout">logout</a>
         </div>
         <ul class="mobile-links">
           <li>
-            <a href="products.html">
+            <a href="/products">
               <div class="nav-item">
                 <img
-                  src="/public/svgs/product-service-campaign-item-svgrepo-com.svg"
+                  src="/svgs/product-service-campaign-item-svgrepo-com.svg"
                   alt="dashboard logo"
                 />
                 <div>Products</div>
@@ -117,10 +106,10 @@
             </a>
           </li>
           <li>
-            <a href="sales-page.html">
+            <a href="/sales">
               <div class="nav-item">
                 <img
-                  src="/public/svgs/verification-svgrepo-com.svg"
+                  src="/svgs/verification-svgrepo-com.svg"
                   alt="dashboard logo"
                 />
                 <div>Sales</div>
@@ -128,23 +117,20 @@
             </a>
           </li>
           <li>
-            <a href="#">
+            <a href="/cart">
               <div class="nav-item">
                 <img
-                  src="/public/svgs/users-svgrepo-com.svg"
+                  src="/svgs/verification-svgrepo-com.svgg"
                   alt="dashboard logo"
                 />
-                <div>Customers</div>
+                <div>Cart</div>
               </div>
             </a>
           </li>
           <li>
-            <a href="users-page.html">
+            <a href="/users">
               <div class="nav-item">
-                <img
-                  src="/public/svgs/users-svgrepo-com.svg"
-                  alt="dashboard logo"
-                />
+                <img src="/svgs/users-svgrepo-com.svg" alt="dashboard logo" />
                 <div>Users</div>
               </div>
             </a>
@@ -156,7 +142,7 @@
           <div class="delete-window" id="delete-window">
             <button class="close-btn" id="close-btn">
               <img
-                src="/public/svgs/multiply-svgrepo-com.svg"
+                src="/svgs/multiply-svgrepo-com.svg"
                 alt="multiply-svgrepo-com"
               />
             </button>
@@ -168,10 +154,7 @@
           </div>
           <div class="edit-window" id="edit-window">
             <button id="close-edit-btn" class="close-btn">
-              <img
-                src="/public/svgs/multiply-svgrepo-com.svg"
-                alt="close-btn"
-              />
+              <img src="/svgs/multiply-svgrepo-com.svg" alt="close-btn" />
             </button>
             <form id="edit-form" class="edit-form">
               <input
@@ -217,22 +200,19 @@
           <div id="product-overview" class="product-overview">
             <div class="div-3">
               <button id="delete-btn">
-                <img
-                  src="/public/svgs/trash-alt-svgrepo-com.svg"
-                  alt="trash-icon"
-                />
+                <img src="/svgs/trash-alt-svgrepo-com.svg" alt="trash-icon" />
               </button>
               <button id="edit-btn">
-                <img src="/public/svgs/edit-svgrepo-com.svg" alt="edit-icon" />
+                <img src="/svgs/edit-svgrepo-com.svg" alt="edit-icon" />
               </button>
             </div>
             <div class="product-image">
-              <img src="/public/images/Nike shoe.jpg" alt="nike shoe image" />
+              <img src="/images/Nike shoe.jpg" alt="nike shoe image" />
               <div class="smaller-image">
-                <img src="/public/images/Nike shoe.jpg" alt="nike shoe image" />
-                <img src="/public/images/Nike shoe.jpg" alt="nike shoe image" />
-                <img src="/public/images/Nike shoe.jpg" alt="nike shoe image" />
-                <img src="/public/images/Nike shoe.jpg" alt="nike shoe image" />
+                <img src="/images/Nike shoe.jpg" alt="nike shoe image" />
+                <img src="/images/Nike shoe.jpg" alt="nike shoe image" />
+                <img src="/images/Nike shoe.jpg" alt="nike shoe image" />
+                <img src="/images/Nike shoe.jpg" alt="nike shoe image" />
               </div>
             </div>
             <div class="product-stats">
@@ -240,12 +220,12 @@
                 <div class="product-item">
                   <p>Stylish</p>
                   <img
-                    src="/public/svgs/verified-check-svgrepo-com.svg"
+                    src="/svgs/verified-check-svgrepo-com.svg"
                     alt="verification-img"
                   />
                 </div>
                 <div class="product-item">
-                  <img src="/public/svgs/star-svgrepo-com.svg" alt="ratings" />
+                  <img src="/svgs/star-svgrepo-com.svg" alt="ratings" />
                   <p>(4.8)</p>
                   <a href="#">17.5k reviews</a>
                 </div>
@@ -254,7 +234,7 @@
               <div class="location">
                 <div class="location-div">
                   <img
-                    src="/public/svgs/location-pin-svgrepo-com.svg"
+                    src="/svgs/location-pin-svgrepo-com.svg"
                     alt="location-img"
                   />
                   <p>New York, USA</p>
@@ -271,16 +251,10 @@
               <h1>NIKE DUNK HIGH</h1>
               <div class="div-2">
                 <button id="delete-btn">
-                  <img
-                    src="/public/svgs/trash-alt-svgrepo-com.svg"
-                    alt="trash-icon"
-                  />
+                  <img src="/svgs/trash-alt-svgrepo-com.svg" alt="trash-icon" />
                 </button>
                 <button id="edit-btn">
-                  <img
-                    src="/public/svgs/edit-svgrepo-com.svg"
-                    alt="edit-icon"
-                  />
+                  <img src="/svgs/edit-svgrepo-com.svg" alt="edit-icon" />
                 </button>
               </div>
             </div>
@@ -330,7 +304,7 @@
               <p>DETAILS</p>
               <div class="details-div">
                 <img
-                  src="/public/svgs/location-pin-svgrepo-com.svg"
+                  src="/svgs/location-pin-svgrepo-com.svg"
                   alt="location-svg"
                 />
                 <p>sent from</p>
@@ -377,10 +351,7 @@
             <h5>$135</h5>
           </div>
           <button class="add-to-cart">
-            <img
-              src="/public/svgs/verification-svgrepo-com.svg"
-              alt="cart-logo"
-            />
+            <img src="/svgs/verification-svgrepo-com.svg" alt="cart-logo" />
             <span>Add to Cart</span>
           </button>
           <button class="create-record">
@@ -389,6 +360,6 @@
         </div>
       </section>
     </div>
-    <script src="../public/script.js"></script>
+    <script src="/script.js"></script>
   </body>
 </html>
