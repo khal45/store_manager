@@ -28,4 +28,15 @@ const addProduct = (req, res) => {
   res.json({ message: "product added successfully" });
 };
 
-export { getProducts, addProduct };
+const getProductById = (req, res) => {
+  const { id } = req.params;
+  const foundProduct = products.find((product) => product.id === id);
+
+  if (!foundProduct) {
+    return res.status(404).json({ message: "Product not found" });
+  } else {
+    res.json(foundProduct);
+  }
+};
+
+export { getProducts, addProduct, getProductById };

@@ -1,5 +1,9 @@
 import { verifyToken, isAdmin } from "../middleware/authMiddleware.js";
-import { getProducts, addProduct } from "../controllers/productsController.js";
+import {
+  getProducts,
+  addProduct,
+  getProductById,
+} from "../controllers/productsController.js";
 import express from "express";
 import { fileURLToPath } from "url";
 import path from "path";
@@ -22,5 +26,6 @@ productRouter.use(bodyParser.urlencoded({ extended: true }));
 
 productRouter.get("/products", verifyToken, getProducts);
 productRouter.post("/products", verifyToken, isAdmin, addProduct);
+productRouter.get("/products/:id", verifyToken, getProductById);
 
 export default productRouter;
