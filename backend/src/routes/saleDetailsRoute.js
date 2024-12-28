@@ -12,16 +12,9 @@ const __dirname = path.dirname(__filename);
 
 // middleware
 
-saleDetailsRouter.use(
-  express.static(path.join(__dirname, "../../../frontend/node_modules"))
-);
-saleDetailsRouter.use(
-  express.static(path.join(__dirname, "../../../frontend/public"))
-);
-
 saleDetailsRouter.use(bodyParser.json());
 saleDetailsRouter.use(bodyParser.urlencoded({ extended: true }));
 
-saleDetailsRouter.get("/sale-detail", getSaleDetails);
+saleDetailsRouter.get("/", getSaleDetails);
 
 export default saleDetailsRouter;

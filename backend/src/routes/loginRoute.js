@@ -14,13 +14,6 @@ const __dirname = path.dirname(__filename);
 
 // middleware
 
-loginRouter.use(
-  express.static(path.join(__dirname, "../../../frontend/node_modules"))
-);
-loginRouter.use(
-  express.static(path.join(__dirname, "../../../frontend/public"))
-);
-
 loginRouter.use(bodyParser.json());
 loginRouter.use(bodyParser.urlencoded({ extended: true }));
 

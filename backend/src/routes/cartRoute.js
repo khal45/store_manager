@@ -12,16 +12,9 @@ const __dirname = path.dirname(__filename);
 
 // middleware
 
-cartRouter.use(
-  express.static(path.join(__dirname, "../../../frontend/node_modules"))
-);
-cartRouter.use(
-  express.static(path.join(__dirname, "../../../frontend/public"))
-);
-
 cartRouter.use(bodyParser.json());
 cartRouter.use(bodyParser.urlencoded({ extended: true }));
 
-cartRouter.get("/cart", getCart);
+cartRouter.get("/", getCart);
 
 export default cartRouter;
