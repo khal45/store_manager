@@ -120,7 +120,7 @@
             <a href="/cart">
               <div class="nav-item">
                 <img
-                  src="/svgs/verification-svgrepo-com.svgg"
+                  src="/svgs/verification-svgrepo-com.svg"
                   alt="dashboard logo"
                 />
                 <div>Cart</div>
@@ -354,9 +354,73 @@
             <img src="/svgs/verification-svgrepo-com.svg" alt="cart-logo" />
             <span>Add to Cart</span>
           </button>
-          <button class="create-record">
+          <button class="create-record" id="create-record">
             <span>Create Sales Record</span>
           </button>
+          <div id="create-record-div" class="create-record-div">
+            <button class="close-sale" id="close-sale">
+              <img
+                src="/svgs/multiply-svgrepo-com.svg"
+                alt="multiply-svgrepo-com"
+              />
+            </button>
+            <form action="/sales" method="post">
+              <div class="input-div">
+                <input
+                  type="text"
+                  id="product-name"
+                  class="mobile-input"
+                  name="productName"
+                  placeholder="Product Name"
+                />
+              </div>
+              <div class="input-div">
+                <input
+                  type="number"
+                  id="quantity"
+                  class="mobile-input"
+                  name="quantity"
+                  placeholder="Quantity"
+                />
+              </div>
+              <div class="input-div">
+                <input
+                  type="number"
+                  id="total-amount"
+                  class="mobile-input"
+                  name="totalAmount"
+                  placeholder="Total Amount"
+                />
+              </div>
+              <div class="input-div">
+                <input
+                  type="text"
+                  id="payment-method"
+                  class="mobile-input"
+                  name="paymentMethod"
+                  placeholder="Payment Method"
+                />
+              </div>
+              <div class="input-div">
+                <input
+                  type="text"
+                  id="status"
+                  class="mobile-input"
+                  name="status"
+                  placeholder="Status"
+                />
+              </div>
+              <div class="flex-container">
+                <button
+                  type="submit"
+                  id="create-product"
+                  class="create-sale-btn"
+                >
+                  Create Sale <i class="fa fa-plus" aria-hidden="true"></i>
+                </button>
+              </div>
+            </form>
+          </div>
         </div>
       </section>
     </div>

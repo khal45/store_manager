@@ -565,6 +565,66 @@
   background-color: var(--background);
 }
 
+.close-sale {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.create-record-div {
+  display: none;
+  position: absolute;
+  z-index: 1;
+  border: 1px solid black;
+  width: 60vw;
+  border-radius: 5px;
+  margin-left: -40%;
+  padding-top: 1%;
+  padding-bottom: 2%;
+  background-color: var(--pure-white);
+}
+
+.input-div {
+  background-color: var(--background);
+  width: 95%;
+  height: 40px;
+  border-radius: 25px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 3% 0 0 3%;
+}
+
+.mobile-input {
+  all: unset;
+  height: 100%;
+  width: 100%;
+  padding: 6px 15px;
+  color: var(--content-black);
+}
+
+.flex-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.create-sale-btn {
+  padding: 10px 22px;
+  border-radius: 25px;
+  border: 1px solid var(--content-black);
+  background-color: var(--background);
+  font-size: 14px;
+  width: 90%;
+  cursor: pointer;
+}
+
+@media only screen and (width >= 64em) {
+  .create-record-div {
+    bottom: 5%;
+  }
+}
+
 /* cart page mobile design */
 
 @media only screen and (20em <= width < 64em) {
@@ -677,5 +737,51 @@
 
   .create-record {
     width: 82%;
+  }
+
+  .create-record-div {
+    position: absolute;
+    z-index: 1;
+    border: 1px solid black;
+    border-radius: 5px;
+    width: 100%;
+    padding-top: 2%;
+    padding-bottom: 6%;
+    background-color: var(--pure-white);
+    margin: 0;
+  }
+
+  .input-div {
+    background-color: var(--background);
+    width: 95%;
+    height: 40px;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 3% 0 0 3%;
+  }
+
+  .mobile-input {
+    all: unset;
+    height: 100%;
+    width: 100%;
+    padding: 6px 15px;
+    color: var(--content-black);
+  }
+
+  .flex-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+
+  .create-sale-btn {
+    padding: 10px 22px;
+    border-radius: 25px;
+    border: 1px solid var(--content-black);
+    background-color: var(--background);
+    font-size: 14px;
+    min-width: 70vw;
   }
 }
