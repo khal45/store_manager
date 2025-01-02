@@ -4,6 +4,7 @@ const sales = [
     saleId: "f7c6b24a-e0bc-422b-8d24-aa00a88dafc4",
     date: "22-09-2024",
     quantity: 1,
+    unitPrice: 260,
     totalAmount: 260,
     paymentMethod: "card",
     status: "completed",

@@ -6,13 +6,17 @@ const uniqueId = uuidv4();
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-const filePath = path.join(
+const salesPath = path.join(
   __dirname,
   "../../../frontend/views/sales-page.html"
 );
+const detailsPath = path.join(
+  __dirname,
+  "../../../frontend/views/sale-details.html"
+);
 
 const getSales = (req, res) => {
-  res.sendFile(filePath);
+  res.sendFile(salesPath);
 };
 
 const getSaleById = (req, res) => {
@@ -22,19 +26,18 @@ const getSaleById = (req, res) => {
   if (!foundSaleRecord) {
     return res.status(404).json({ message: "Sale record not found" });
   } else {
-    res.json(foundSaleRecord);
+    res.sendFile(detailsPath);
   }
 };
 
 const createSale = (req, res) => {
-  const { productName, quantity, totalAmount, paymentMethod, status } =
-    req.body;
+  const { productName, quantity, paymentMethod, unitPrice, status } = req.body;
 
   const requiredFields = [
     "productName",
     "quantity",
-    "totalAmount",
     "paymentMethod",
+    "unitPrice",
     "status",
   ];
   const missingFields = requiredFields.filter((field) => !req.body[field]);
@@ -50,8 +53,9 @@ const createSale = (req, res) => {
       saleId: uniqueId,
       date: new Date().toDateString(),
       quantity,
-      totalAmount,
       paymentMethod,
+      unitPrice,
+      totalAmount: unitPrice * quantity,
       status,
     };
 

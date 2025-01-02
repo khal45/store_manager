@@ -17,6 +17,12 @@ const __dirname = path.dirname(__filename);
 
 // middleware
 
+// 1. user clicks a sale
+// 2. frontend sends the id to the backend
+// 3. backend verifies the id
+// 4. backend redirects to the details page if found
+// 5. backend throws an error if not found
+
 salesRouter.use(bodyParser.json());
 salesRouter.use(bodyParser.urlencoded({ extended: true }));
 
