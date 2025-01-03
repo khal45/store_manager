@@ -4,7 +4,7 @@ import logoutRouter from "./logoutRoute.js";
 import userRouter from "./userRoute.js";
 import salesRouter from "./salesRoute.js";
 import saleDetailsRouter from "./saleDetailsRoute.js";
-import cartRouter from "./cartRoute.js";
+import productDetailsRouter from "./ProductDetailsRoute.js";
 
 export {
   loginRouter,
@@ -13,5 +13,5 @@ export {
   userRouter,
   salesRouter,
   saleDetailsRouter,
-  cartRouter,
+  productDetailsRouter,
 };

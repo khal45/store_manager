@@ -5,7 +5,7 @@ import {
   userRouter,
   salesRouter,
   saleDetailsRouter,
-  cartRouter,
+  productDetailsRouter,
 } from "./src/routes/index.js";
 import express from "express";
 import cookieParser from "cookie-parser";
@@ -31,7 +31,7 @@ app.use("/api/v1/logout", logoutRouter);
 app.use("/api/v1", userRouter);
 app.use("/api/v1/sales", salesRouter);
 app.use("/api/v1/sale-details", saleDetailsRouter);
-app.use("/api/v1/cart", cartRouter);
+app.use("/api/v1/product-details", productDetailsRouter);
 
 // start the server
 app.listen(port, () => {

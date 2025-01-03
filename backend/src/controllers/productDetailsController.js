@@ -5,8 +5,8 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const filePath = path.join(__dirname, "../../../frontend/views/cart-page.html");
 
-const getCart = (req, res) => {
+const getProductDetails = (req, res) => {
   res.sendFile(filePath);
 };
 
-export { getCart };
+export { getProductDetails };
