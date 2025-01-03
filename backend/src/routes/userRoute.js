@@ -13,13 +13,6 @@ const __dirname = path.dirname(__filename);
 
 // middleware
 
-userRouter.use(
-  express.static(path.join(__dirname, "../../../frontend/node_modules"))
-);
-userRouter.use(
-  express.static(path.join(__dirname, "../../../frontend/public"))
-);
-
 userRouter.use(bodyParser.json());
 userRouter.use(bodyParser.urlencoded({ extended: true }));
 

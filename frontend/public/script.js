@@ -119,3 +119,12 @@ if (editBtn) {
     closeFunc(closeEditBtn, editWindow);
   });
 }
+
+const createRecord = document.getElementById("create-record");
+const createRecordDiv = document.getElementById("create-record-div");
+const closeSale = document.getElementById("close-sale");
+
+if (createRecord) {
+  openFunc(createRecord, createRecordDiv);
+  closeFunc(closeSale, createRecordDiv);
+}

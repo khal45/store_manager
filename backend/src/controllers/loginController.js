@@ -41,7 +41,7 @@ const postLogin = (req, res) => {
       secure: true,
       maxAge: 24 * 60 * 60 * 1000,
     });
-    return res.redirect("/products");
+    return res.redirect("/api/v1/products");
   } else {
     return res.status(401).json({ message: "incorrect password" });
   }
