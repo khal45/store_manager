@@ -25,7 +25,7 @@ const createUser = (req, res, next) => {
   const userExists = users.find((user) => user.username === username);
 
   if (missingFields.length > 0) {
-    res.status(422).json({
+    res.status(400).json({
       success: false,
       message: "All fields are required",
     });
