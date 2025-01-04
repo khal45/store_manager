@@ -3,7 +3,6 @@ import productRouter from "./productsRoute.js";
 import logoutRouter from "./logoutRoute.js";
 import userRouter from "./userRoute.js";
 import salesRouter from "./salesRoute.js";
-import saleDetailsRouter from "./saleDetailsRoute.js";
 import productDetailsRouter from "./ProductDetailsRoute.js";
 
 export {
@@ -12,6 +11,5 @@ export {
   logoutRouter,
   userRouter,
   salesRouter,
-  saleDetailsRouter,
   productDetailsRouter,
 };

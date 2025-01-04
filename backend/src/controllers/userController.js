@@ -16,6 +16,11 @@ const getUser = (req, res) => {
   res.sendFile(filePath);
 };
 
+// This gets the current user from the request to be used to dynamically update the ui
+const getCurrentUser = (req, res) => {
+  res.json(req.user);
+};
+
 const createUser = (req, res, next) => {
   const { username, password, role } = req.body;
 
@@ -49,4 +54,4 @@ const createUser = (req, res, next) => {
   }
 };
 
-export { getUser, createUser };
+export { getUser, createUser, getCurrentUser };

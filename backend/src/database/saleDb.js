@@ -8,6 +8,7 @@ const sales = [
     totalAmount: 260,
     paymentMethod: "card",
     status: "completed",
+    attendantId: "8340741",
   },
 ];
 

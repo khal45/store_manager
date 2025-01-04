@@ -22,17 +22,25 @@ const getSales = (req, res) => {
 const getSaleById = (req, res) => {
   const { saleId } = req.params;
   const foundSaleRecord = sales.find((sale) => sale.saleId === saleId);
-
+  const attendantId = req.user.id;
   if (!foundSaleRecord) {
     return res.status(404).json({ message: "Sale record not found" });
   } else {
-    res.sendFile(detailsPath);
+    if (
+      attendantId === foundSaleRecord.attendantId ||
+      req.user.role === "Admin"
+    ) {
+      res.json(foundSaleRecord);
+    } else {
+      res
+        .status(403)
+        .json({ message: "Attendant does not have access to sale record" });
+    }
   }
 };
 
 const createSale = (req, res) => {
   const { productName, quantity, paymentMethod, unitPrice, status } = req.body;
-
   const requiredFields = [
     "productName",
     "quantity",
@@ -57,6 +65,7 @@ const createSale = (req, res) => {
       unitPrice,
       totalAmount: unitPrice * quantity,
       status,
+      attendantId: req.user.id,
     };
 
     sales.push(newOrder);

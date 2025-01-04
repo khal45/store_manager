@@ -28,6 +28,6 @@ salesRouter.use(bodyParser.urlencoded({ extended: true }));
 
 salesRouter.get("/", verifyToken, isAdmin, getSales);
 salesRouter.post("/", verifyToken, createSale);
-salesRouter.get("/:saleId", verifyToken, isAdmin, getSaleById);
+salesRouter.get("/:saleId", verifyToken, getSaleById);
 
 export default salesRouter;

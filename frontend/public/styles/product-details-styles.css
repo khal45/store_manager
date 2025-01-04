@@ -1,13 +1,17 @@
-#cart-page {
-  height: 100vh;
-  width: 100vw;
+.user-options-mobile {
+  top: 8% !important;
+}
+
+.product-details {
+  height: 100%;
+  width: 100%;
   /* margin: 0px;
     padding: 0px; */
   position: relative;
   color: var(--content-gray);
 }
 
-#cart-page nav {
+.product-details nav {
   margin: 10px 0px 0px 0px;
   padding-left: 35px;
   width: 90vw;

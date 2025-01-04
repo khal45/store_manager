@@ -128,3 +128,26 @@ if (createRecord) {
   openFunc(createRecord, createRecordDiv);
   closeFunc(closeSale, createRecordDiv);
 }
+
+const apiUrl = "http://localhost:4000/api/v1/user";
+
+// fetch data from api here
+const fetchCurrentUser = async () => {
+  try {
+    const response = await fetch(apiUrl);
+    const data = await response.json();
+    updateNavbar(data.username);
+  } catch (error) {
+    console.error("Error fetching user:", error);
+  }
+};
+
+const updateNavbar = (username) => {
+  const usernames = document.querySelectorAll("#username");
+  usernames.forEach((user) => {
+    user.innerHTML = username || "John Doe";
+  });
+};
+
+fetchCurrentUser();
+// end of fetch

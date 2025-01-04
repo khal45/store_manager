@@ -4,7 +4,6 @@ import {
   logoutRouter,
   userRouter,
   salesRouter,
-  saleDetailsRouter,
   productDetailsRouter,
 } from "./src/routes/index.js";
 import express from "express";
@@ -30,7 +29,6 @@ app.use("/api/v1/products", productRouter);
 app.use("/api/v1/logout", logoutRouter);
 app.use("/api/v1", userRouter);
 app.use("/api/v1/sales", salesRouter);
-app.use("/api/v1/sale-details", saleDetailsRouter);
 app.use("/api/v1/product-details", productDetailsRouter);
 
 // start the server
