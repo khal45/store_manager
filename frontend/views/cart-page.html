@@ -4,15 +4,19 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="/styles/styles-general.css" />
-    <link rel="stylesheet" type="text/css" href="/styles/cart-styles.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="/styles/product-details-styles.css"
+    />
     <title>cart-page</title>
   </head>
   <body>
-    <div id="cart-page" class="cart-page">
+    <div id="product-details" class="product-details">
       <header>
         <div class="nav-container">
           <nav>
-            <a href="/products">
+            <a href="/api/v1/products">
               <div class="logo">
                 <img src="/svgs/shop-store-svgrepo-com.svg" alt="svg logo" />
                 <div class="text">Store Manager</div>
@@ -25,7 +29,7 @@
             </a>
             <ul class="desktop-links">
               <li>
-                <a href="/products"
+                <a href="/api/v1/products"
                   ><img
                     src="/svgs/product-service-campaign-item-svgrepo-com.svg"
                     alt="dashboard logo"
@@ -34,7 +38,7 @@
                 </a>
               </li>
               <li>
-                <a href="/sales"
+                <a href="/api/v1/sales"
                   ><img
                     src="/svgs/verification-svgrepo-com.svg"
                     alt="dashboard logo"
@@ -43,7 +47,7 @@
                 </a>
               </li>
               <li>
-                <a href="/cart"
+                <a href="/api/v1/cart"
                   ><img
                     src="/svgs/verification-svgrepo-com.svg"
                     alt="dashboard logo"
@@ -52,7 +56,7 @@
                 </a>
               </li>
               <li>
-                <a href="/users"
+                <a href="/api/v1/users"
                   ><img
                     src="/svgs/users-svgrepo-com.svg"
                     alt="dashboard logo"
@@ -66,11 +70,11 @@
                 src="https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png"
                 alt="user-image"
               />
-              <div class="user-name">John Doe</div>
+              <div class="user-name" id="username">John Doe</div>
               <i class="fa fa-caret-down" id="dropdown" aria-hidden="true"></i>
             </div>
             <div id="user-options" class="user-options user-options-hidden">
-              <a href="/logout">logout</a>
+              <a href="/api/v1/logout">logout</a>
             </div>
           </nav>
         </div>
@@ -82,7 +86,7 @@
             alt="user-image-mobile"
           />
           <div class="user-div">
-            <div>John Doe</div>
+            <div id="username"></div>
             <i
               class="fa fa-caret-down"
               id="dropdown-mobile"
@@ -91,11 +95,11 @@
           </div>
         </div>
         <div id="user-options-mobile" class="user-options-mobile">
-          <a href="/logout">logout</a>
+          <a href="/api/v1/logout">logout</a>
         </div>
         <ul class="mobile-links">
           <li>
-            <a href="/products">
+            <a href="/api/v1/products">
               <div class="nav-item">
                 <img
                   src="/svgs/product-service-campaign-item-svgrepo-com.svg"
@@ -106,7 +110,7 @@
             </a>
           </li>
           <li>
-            <a href="/sales">
+            <a href="/api/v1/sales">
               <div class="nav-item">
                 <img
                   src="/svgs/verification-svgrepo-com.svg"
@@ -117,10 +121,10 @@
             </a>
           </li>
           <li>
-            <a href="/cart">
+            <a href="/api/v1/cart">
               <div class="nav-item">
                 <img
-                  src="/svgs/verification-svgrepo-com.svgg"
+                  src="/svgs/verification-svgrepo-com.svg"
                   alt="dashboard logo"
                 />
                 <div>Cart</div>
@@ -128,7 +132,7 @@
             </a>
           </li>
           <li>
-            <a href="/users">
+            <a href="/api/v1/users">
               <div class="nav-item">
                 <img src="/svgs/users-svgrepo-com.svg" alt="dashboard logo" />
                 <div>Users</div>
@@ -354,9 +358,73 @@
             <img src="/svgs/verification-svgrepo-com.svg" alt="cart-logo" />
             <span>Add to Cart</span>
           </button>
-          <button class="create-record">
+          <button class="create-record" id="create-record">
             <span>Create Sales Record</span>
           </button>
+          <div id="create-record-div" class="create-record-div">
+            <button class="close-sale" id="close-sale">
+              <img
+                src="/svgs/multiply-svgrepo-com.svg"
+                alt="multiply-svgrepo-com"
+              />
+            </button>
+            <form action="/api/v1/sales" method="post">
+              <div class="input-div">
+                <input
+                  type="text"
+                  id="product-name"
+                  class="mobile-input"
+                  name="productName"
+                  placeholder="Product Name"
+                />
+              </div>
+              <div class="input-div">
+                <input
+                  type="number"
+                  id="quantity"
+                  class="mobile-input"
+                  name="quantity"
+                  placeholder="Quantity"
+                />
+              </div>
+              <div class="input-div">
+                <input
+                  type="number"
+                  id="unit-price"
+                  class="mobile-input"
+                  name="unitPrice"
+                  placeholder="Unit Price"
+                />
+              </div>
+              <div class="input-div">
+                <input
+                  type="text"
+                  id="payment-method"
+                  class="mobile-input"
+                  name="paymentMethod"
+                  placeholder="Payment Method"
+                />
+              </div>
+              <div class="input-div">
+                <input
+                  type="text"
+                  id="status"
+                  class="mobile-input"
+                  name="status"
+                  placeholder="Status"
+                />
+              </div>
+              <div class="flex-container">
+                <button
+                  type="submit"
+                  id="create-product"
+                  class="create-sale-btn"
+                >
+                  Create Sale <i class="fa fa-plus" aria-hidden="true"></i>
+                </button>
+              </div>
+            </form>
+          </div>
         </div>
       </section>
     </div>
