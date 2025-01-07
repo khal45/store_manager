@@ -129,8 +129,8 @@ if (createRecord) {
   closeFunc(closeSale, createRecordDiv);
 }
 
-const apiUrl = "http://localhost:4000/api/v1/users/currentUser";
-const dbUrl = "http://localhost:4000/api/v1/users/UserDb";
+const apiUrl = "http://localhost:4000/api/v1/users/currentUser"; // replace with "your_url//api/v1/users/currentUser"
+const dbUrl = "http://localhost:4000/api/v1/users/userDb"; // replace with "your_url//api/v1/users/userDb"
 
 // fetch data from api here
 
