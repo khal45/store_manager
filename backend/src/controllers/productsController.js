@@ -8,9 +8,17 @@ const uniqueId = uuidv4();
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const filePath = path.join(__dirname, "../../../frontend/views/products.html");
+const detailsPath = path.join(
+  __dirname,
+  "../../../frontend/views/product-details-page.html"
+);
 
 const getProducts = (req, res) => {
   res.sendFile(filePath);
+};
+
+const getProductDetails = (req, res) => {
+  res.sendFile(detailsPath);
 };
 
 const addProduct = (req, res) => {
@@ -39,4 +47,4 @@ const getProductById = (req, res) => {
   }
 };
 
-export { getProducts, addProduct, getProductById };
+export { getProducts, addProduct, getProductById, getProductDetails };

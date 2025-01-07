@@ -16,6 +16,11 @@ const getUser = (req, res) => {
   res.sendFile(filePath);
 };
 
+// This gets the userdb to be used to dynamically set the href of each user in the frontend
+const getUserDb = (req, res) => {
+  res.json(users);
+};
+
 // This gets the current user from the request to be used to dynamically update the ui
 const getCurrentUser = (req, res) => {
   res.json(req.user);
@@ -54,4 +59,4 @@ const createUser = (req, res, next) => {
   }
 };
 
-export { getUser, createUser, getCurrentUser };
+export { getUser, createUser, getCurrentUser, getUserDb };

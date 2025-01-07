@@ -252,6 +252,12 @@ nav a {
   margin: 15px 0px 0px 10px;
 }
 
+.username {
+  color: var(--content-black);
+  cursor: pointer;
+  text-decoration: none;
+}
+
 .user-div {
   display: flex;
   flex-direction: row;

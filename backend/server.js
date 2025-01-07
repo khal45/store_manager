@@ -4,7 +4,6 @@ import {
   logoutRouter,
   userRouter,
   salesRouter,
-  productDetailsRouter,
 } from "./src/routes/index.js";
 import express from "express";
 import cookieParser from "cookie-parser";
@@ -27,9 +26,8 @@ const port = process.env.PORT || 3000;
 app.use("/api/v1", loginRouter);
 app.use("/api/v1/products", productRouter);
 app.use("/api/v1/logout", logoutRouter);
-app.use("/api/v1", userRouter);
+app.use("/api/v1/users", userRouter);
 app.use("/api/v1/sales", salesRouter);
-app.use("/api/v1/product-details", productDetailsRouter);
 
 // start the server
 app.listen(port, () => {

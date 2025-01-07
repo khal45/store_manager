@@ -1,4 +1,5 @@
 import sales from "../database/saleDb.js";
+import users from "../database/usersDb.js";
 import { fileURLToPath } from "url";
 import path from "path";
 import { v4 as uuidv4 } from "uuid";
@@ -15,8 +16,29 @@ const detailsPath = path.join(
   "../../../frontend/views/sale-details.html"
 );
 
-const getSales = (req, res) => {
+const attendantSalesPath = path.join(
+  __dirname,
+  "../../../frontend/views/attendant-sales.html"
+);
+
+const getAllSales = (req, res) => {
   res.sendFile(salesPath);
+};
+
+const getAttendantSales = (req, res) => {
+  const { attendantId } = req.params;
+  const foundUser = users.find((user) => user.id === attendantId);
+  if (!foundUser) {
+    return res.status(404).json({ message: "Attendant not found" });
+  } else {
+    if (foundUser.role === "Admin") {
+      return res
+        .status(400)
+        .json({ message: "Admin cannot have sale records!" });
+    } else {
+      res.sendFile(attendantSalesPath);
+    }
+  }
 };
 
 const getSaleById = (req, res) => {
@@ -24,13 +46,13 @@ const getSaleById = (req, res) => {
   const foundSaleRecord = sales.find((sale) => sale.saleId === saleId);
   const attendantId = req.user.id;
   if (!foundSaleRecord) {
-    return res.status(404).json({ message: "Sale record not found" });
+    res.status(404).json({ message: "Sale Record not found!" });
   } else {
     if (
       attendantId === foundSaleRecord.attendantId ||
       req.user.role === "Admin"
     ) {
-      res.json(foundSaleRecord);
+      res.sendFile(detailsPath);
     } else {
       res
         .status(403)
@@ -73,4 +95,4 @@ const createSale = (req, res) => {
   }
 };
 
-export { getSales, createSale, getSaleById };
+export { getAllSales, getAttendantSales, createSale, getSaleById };
