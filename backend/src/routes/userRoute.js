@@ -2,9 +2,9 @@ import "../middleware/authMiddleware.js";
 import { verifyToken, isAdmin } from "../middleware/authMiddleware.js";
 import {
   getUser,
-  getUserDb,
   createUser,
-  getCurrentUser,
+  // getCurrentUser,
+  // getUserDb,
 } from "../controllers/userController.js";
 import { getAttendantSales } from "../controllers/salesController.js";
 import express from "express";
@@ -24,8 +24,8 @@ userRouter.use(bodyParser.urlencoded({ extended: true }));
 
 userRouter.get("/", verifyToken, isAdmin, getUser);
 userRouter.get("/sales/:attendantId", verifyToken, getAttendantSales);
-userRouter.get("/currentUser", verifyToken, getCurrentUser);
-userRouter.get("/userDb", verifyToken, getUserDb);
 userRouter.post("/register", verifyToken, isAdmin, createUser);
+// userRouter.get("/currentUser", verifyToken, getCurrentUser);
+// userRouter.get("/userDb", verifyToken, getUserDb);
 
 export default userRouter;

@@ -1,28 +1,10 @@
 import sales from "../database/saleDb.js";
 import users from "../database/usersDb.js";
-import { fileURLToPath } from "url";
-import path from "path";
 import { v4 as uuidv4 } from "uuid";
 const uniqueId = uuidv4();
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-const salesPath = path.join(
-  __dirname,
-  "../../../frontend/views/sales-page.html"
-);
-const detailsPath = path.join(
-  __dirname,
-  "../../../frontend/views/sale-details.html"
-);
-
-const attendantSalesPath = path.join(
-  __dirname,
-  "../../../frontend/views/attendant-sales.html"
-);
-
 const getAllSales = (req, res) => {
-  res.sendFile(salesPath);
+  res.json(sales);
 };
 
 const getAttendantSales = (req, res) => {
@@ -36,7 +18,10 @@ const getAttendantSales = (req, res) => {
         .status(400)
         .json({ message: "Admin cannot have sale records!" });
     } else {
-      res.sendFile(attendantSalesPath);
+      const attendantSales = sales.filter(
+        (sale) => sale.attendantId === attendantId
+      );
+      res.json(attendantSales);
     }
   }
 };
@@ -52,7 +37,7 @@ const getSaleById = (req, res) => {
       attendantId === foundSaleRecord.attendantId ||
       req.user.role === "Admin"
     ) {
-      res.sendFile(detailsPath);
+      res.json(foundSaleRecord);
     } else {
       res
         .status(403)

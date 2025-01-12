@@ -1,6 +1,6 @@
 const logout = (req, res) => {
   res.clearCookie("jwt");
-  res.redirect("/api/v1");
+  return res.status(200).json({ success: true });
 };
 
 export { logout };
