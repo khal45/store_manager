@@ -26,14 +26,12 @@ const postLogin = (req, res) => {
         expiresIn: "1d",
       }
     );
-    res.cookie("jwt", accessToken, {
-      httpOnly: true,
-      secure: true,
-      maxAge: 24 * 60 * 60 * 1000,
+
+    return res.status(200).json({
+      success: true,
+      accessToken,
+      message: `welcome ${user.username}`,
     });
-    return res
-      .status(200)
-      .json({ success: true, message: `welcome ${user.username}` });
   } else {
     return res
       .status(401)
@@ -41,4 +39,10 @@ const postLogin = (req, res) => {
   }
 };
 
-export { postLogin };
+// Delete this after testing
+const logout = (req, res) => {
+  res.clearCookie("jwt");
+  return res.status(200).json({ success: true });
+};
+
+export { postLogin, logout };

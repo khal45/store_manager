@@ -4,7 +4,7 @@ import { v4 as uuidv4 } from "uuid";
 const uniqueId = uuidv4();
 
 const getAllSales = (req, res) => {
-  res.json(sales);
+  res.status(200).json(sales);
 };
 
 const getAttendantSales = (req, res) => {
@@ -21,7 +21,7 @@ const getAttendantSales = (req, res) => {
       const attendantSales = sales.filter(
         (sale) => sale.attendantId === attendantId
       );
-      res.json(attendantSales);
+      res.status(200).json(attendantSales);
     }
   }
 };

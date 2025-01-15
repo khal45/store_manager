@@ -1,7 +1,6 @@
 import {
   loginRouter,
   productRouter,
-  logoutRouter,
   userRouter,
   salesRouter,
 } from "./src/routes/index.js";
@@ -25,7 +24,6 @@ const port = process.env.PORT || 3000;
 // routes
 app.use("/api/v1", loginRouter);
 app.use("/api/v1/products", productRouter);
-app.use("/api/v1/logout", logoutRouter);
 app.use("/api/v1/users", userRouter);
 app.use("/api/v1/sales", salesRouter);
 

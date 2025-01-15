@@ -44,10 +44,10 @@ const addProduct = (req, res) => {
       description: productDescription,
       price: price,
       stock: Number(stock),
-      time: new Date(),
+      time: new Date().toString(),
     };
     products.push(newProduct);
-    res.status(200).json({ message: "product added successfully" });
+    res.status(200).json({ message: "product added successfully", newProduct });
   }
 };
 
