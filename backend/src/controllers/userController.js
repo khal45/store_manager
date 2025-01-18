@@ -3,8 +3,10 @@ import { hashSync } from "bcrypt";
 import { v4 as uuidv4 } from "uuid";
 const uniqueId = uuidv4();
 
+const usersRes = users.map(({ password, ...rest }) => rest);
+
 const getUser = (req, res) => {
-  res.json(users);
+  res.json(usersRes);
 };
 
 // // This gets the userdb to be used to dynamically set the href of each user in the frontend

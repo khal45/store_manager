@@ -1,5 +1,5 @@
 import "../middleware/authMiddleware.js";
-import { postLogin, logout } from "../controllers/authController.js";
+import { postLogin } from "../controllers/authController.js";
 import express from "express";
 import bodyParser from "body-parser";
 import dotenv from "dotenv";
@@ -13,6 +13,5 @@ loginRouter.use(bodyParser.json());
 loginRouter.use(bodyParser.urlencoded({ extended: true }));
 
 loginRouter.post("/", postLogin);
-loginRouter.get("/logout", logout);
 
 export default loginRouter;
