@@ -6,9 +6,17 @@ const accessKey = process.env.ACCESS_TOKEN_SECRET;
 
 const verifyToken = async (req, res, next) => {
   try {
-    const token = req.cookies.jwt;
+    const authHeader = req.headers.authorization;
+    if (!authHeader)
+      return res
+        .status(401)
+        .json({ success: false, message: "Authorization header is required" });
 
-    if (!token) return res.sendStatus(401);
+    const token = authHeader.split(" ")[1];
+    if (!token)
+      return res
+        .status(401)
+        .json({ success: false, message: "No token provided" });
 
     jwt.verify(token, accessKey, (err, user) => {
       if (err) return res.sendStatus(403);

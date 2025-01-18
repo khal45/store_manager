@@ -3,8 +3,10 @@ import { verifyToken, isAdmin } from "../middleware/authMiddleware.js";
 import {
   getUser,
   createUser,
-  getCurrentUser,
+  // getCurrentUser,
+  // getUserDb,
 } from "../controllers/userController.js";
+import { getAttendantSales } from "../controllers/salesController.js";
 import express from "express";
 import { fileURLToPath } from "url";
 import path from "path";
@@ -20,8 +22,10 @@ const __dirname = path.dirname(__filename);
 userRouter.use(bodyParser.json());
 userRouter.use(bodyParser.urlencoded({ extended: true }));
 
-userRouter.get("/users", verifyToken, getUser);
-userRouter.get("/user", verifyToken, getCurrentUser);
+userRouter.get("/", verifyToken, isAdmin, getUser);
+userRouter.get("/sales/:attendantId", verifyToken, getAttendantSales);
 userRouter.post("/register", verifyToken, isAdmin, createUser);
+// userRouter.get("/currentUser", verifyToken, getCurrentUser);
+// userRouter.get("/userDb", verifyToken, getUserDb);
 
 export default userRouter;

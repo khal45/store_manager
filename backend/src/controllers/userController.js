@@ -1,27 +1,25 @@
 import users from "../database/usersDb.js";
-import { fileURLToPath } from "url";
-import path from "path";
-import { hashSync, compareSync } from "bcrypt";
+import { hashSync } from "bcrypt";
 import { v4 as uuidv4 } from "uuid";
 const uniqueId = uuidv4();
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-const filePath = path.join(
-  __dirname,
-  "../../../frontend/views/users-page.html"
-);
+const usersRes = users.map(({ password, ...rest }) => rest);
 
 const getUser = (req, res) => {
-  res.sendFile(filePath);
+  res.json(usersRes);
 };
 
-// This gets the current user from the request to be used to dynamically update the ui
-const getCurrentUser = (req, res) => {
-  res.json(req.user);
-};
+// // This gets the userdb to be used to dynamically set the href of each user in the frontend
+// const getUserDb = (req, res) => {
+//   res.json(users);
+// };
 
-const createUser = (req, res, next) => {
+// // This gets the current user from the request to be used to dynamically update the ui
+// const getCurrentUser = (req, res) => {
+//   res.json(req.user);
+// };
+
+const createUser = (req, res) => {
   const { username, password, role } = req.body;
 
   const requiredFields = ["username", "password", "role"];
@@ -54,4 +52,9 @@ const createUser = (req, res, next) => {
   }
 };
 
-export { getUser, createUser, getCurrentUser };
+export {
+  getUser,
+  createUser,
+  //  getCurrentUser,
+  // getUserDb
+};
