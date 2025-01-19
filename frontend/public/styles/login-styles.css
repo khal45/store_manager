@@ -1,7 +1,13 @@
+.error-msg {
+  color: #ff0000;
+  margin-bottom: 4vh;
+}
+
 #login-page {
   background-color: var(--background);
   font-family: "Roboto", sans-serif;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100vh;

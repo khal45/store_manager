@@ -8,6 +8,7 @@ import express from "express";
 import cookieParser from "cookie-parser";
 import { fileURLToPath } from "url";
 import path from "path";
+import cors from "cors";
 
 const app = express();
 
@@ -15,6 +16,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 // middleware
+app.use(cors());
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "../frontend/public")));
 app.use(express.static(path.join(__dirname, "../frontend/node_modules")));

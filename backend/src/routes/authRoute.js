@@ -1,4 +1,3 @@
-import "../middleware/authMiddleware.js";
 import { postLogin } from "../controllers/authController.js";
 import express from "express";
 import bodyParser from "body-parser";
@@ -13,5 +12,4 @@ loginRouter.use(bodyParser.json());
 loginRouter.use(bodyParser.urlencoded({ extended: true }));
 
 loginRouter.post("/", postLogin);
-
 export default loginRouter;
