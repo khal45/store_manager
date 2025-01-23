@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
     window.open("login.html", "_self");
     return;
   }
-  const verifyToken = async () => {
+  const fetchProducts = async () => {
     try {
       const response = await fetch("http://localhost:4000/api/v1/products", {
         headers: { Authorization: `Bearer ${accessToken}` },
@@ -29,5 +29,5 @@ document.addEventListener("DOMContentLoaded", () => {
       console.error(error);
     }
   };
-  verifyToken();
+  fetchProducts();
 });
