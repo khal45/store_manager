@@ -1,3 +1,5 @@
+// This file contains general ui javascript for interactivity
+
 const body = document.body;
 
 const toggleFunc = (element, className) => {
@@ -16,6 +18,7 @@ dropdown.forEach((element) => {
 });
 
 const dropdownMobile = document.querySelectorAll("#dropdown-mobile");
+
 const userOptionsMobile = document.querySelectorAll("#user-options-mobile");
 
 dropdownMobile.forEach((element) => {
