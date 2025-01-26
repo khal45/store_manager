@@ -3,7 +3,7 @@ import { verifyToken, isAdmin } from "../middleware/authMiddleware.js";
 import {
   getUser,
   createUser,
-  // getCurrentUser,
+  getCurrentUser,
   // getUserDb,
 } from "../controllers/userController.js";
 import { getAttendantSales } from "../controllers/salesController.js";
@@ -23,9 +23,8 @@ userRouter.use(bodyParser.json());
 userRouter.use(bodyParser.urlencoded({ extended: true }));
 
 userRouter.get("/", verifyToken, isAdmin, getUser);
-userRouter.get("/sales/:attendantId", verifyToken, getAttendantSales);
+// userRouter.get("/sales/:attendantId", verifyToken, getAttendantSales);
 userRouter.post("/register", verifyToken, isAdmin, createUser);
-// userRouter.get("/currentUser", verifyToken, getCurrentUser);
-// userRouter.get("/userDb", verifyToken, getUserDb);
+userRouter.get("/currentUser", verifyToken, getCurrentUser);
 
 export default userRouter;

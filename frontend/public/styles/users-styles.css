@@ -165,6 +165,19 @@
   display: none;
 }
 
+.msg {
+  display: flex;
+  justify-content: center;
+}
+
+.msg-success {
+  color: #00ff00;
+}
+
+.msg-failure {
+  color: #ff0000;
+}
+
 .create-attendant-visible {
   display: block;
 }

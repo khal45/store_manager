@@ -9,15 +9,10 @@ const getUser = (req, res) => {
   res.json(usersRes);
 };
 
-// // This gets the userdb to be used to dynamically set the href of each user in the frontend
-// const getUserDb = (req, res) => {
-//   res.json(users);
-// };
-
-// // This gets the current user from the request to be used to dynamically update the ui
-// const getCurrentUser = (req, res) => {
-//   res.json(req.user);
-// };
+// This gets the current user from the request to be used to dynamically update the ui
+const getCurrentUser = (req, res) => {
+  res.json(req.user.username);
+};
 
 const createUser = (req, res) => {
   const { username, password, role } = req.body;
@@ -30,12 +25,12 @@ const createUser = (req, res) => {
   if (missingFields.length > 0) {
     res.status(400).json({
       success: false,
-      message: "All fields are required",
+      message: "All fields are required!",
     });
   } else {
     if (userExists) {
       res.status(409).json({
-        status: "Fail",
+        success: false,
         message: "User already exists!",
       });
     } else {
@@ -47,14 +42,13 @@ const createUser = (req, res) => {
         password: hashedPassword,
       };
       users.push(newUser);
-      res.json(newUser);
+      res.status(200).json({
+        success: true,
+        message: "User added successfully!",
+        newUser,
+      });
     }
   }
 };
 
-export {
-  getUser,
-  createUser,
-  //  getCurrentUser,
-  // getUserDb
-};
+export { getUser, createUser, getCurrentUser };

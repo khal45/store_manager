@@ -3,8 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" type="text/css" href="/styles/styles-general.css" />
-    <link rel="stylesheet" type="text/css" href="/styles/users-styles.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../public/styles/styles-general.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../public/styles/users-styles.css"
+    />
     <title>Users page</title>
   </head>
   <body>
@@ -12,9 +20,12 @@
       <header>
         <div class="nav-container">
           <nav>
-            <a href="/api/v1/products">
+            <a href="products.html">
               <div class="logo">
-                <img src="/svgs/shop-store-svgrepo-com.svg" alt="svg logo" />
+                <img
+                  src="../public/svgs/shop-store-svgrepo-com.svg"
+                  alt="svg logo"
+                />
                 <div class="text">Store Manager</div>
               </div>
             </a>
@@ -25,18 +36,18 @@
             </a>
             <ul class="desktop-links">
               <li>
-                <a href="/api/v1/products"
+                <a href="products.html"
                   ><img
-                    src="/svgs/product-service-campaign-item-svgrepo-com.svg"
+                    src="../public/svgs/product-service-campaign-item-svgrepo-com.svg"
                     alt="dashboard logo"
                   />
                   <div>Products</div>
                 </a>
               </li>
               <li>
-                <a href="/api/v1/sales"
+                <a href="sales-page.html"
                   ><img
-                    src="/svgs/verification-svgrepo-com.svg"
+                    src="../public/svgs/verification-svgrepo-com.svg"
                     alt="dashboard logo"
                   />
                   <div>Sales</div>
@@ -45,16 +56,16 @@
               <li>
                 <a href="#"
                   ><img
-                    src="/svgs/verification-svgrepo-com.svg"
+                    src="../public/svgs/verification-svgrepo-com.svg"
                     alt="dashboard logo"
                   />
                   <div>Cart</div>
                 </a>
               </li>
               <li>
-                <a href="/api/v1/users"
+                <a href="users-page.html"
                   ><img
-                    src="/svgs/users-svgrepo-com.svg"
+                    src="../public/svgs/users-svgrepo-com.svg"
                     alt="dashboard logo"
                   />
                   <div>Users</div>
@@ -69,9 +80,9 @@
               <a href="#" class="username"><div id="username">John Doe</div></a>
               <i class="fa fa-caret-down" id="dropdown" aria-hidden="true"></i>
             </div>
-            <div id="user-options" class="user-options user-options-hidden">
-              <a href="/api/v1/logout">logout</a>
-            </div>
+            <button id="logout-btn" class="logout-btn logout-btn-hidden">
+              logout
+            </button>
           </nav>
         </div>
       </header>
@@ -82,7 +93,7 @@
             alt="user-image-mobile"
           />
           <div class="user-div">
-            <a href="#" class="username"><div id="username">John Doe</div></a>
+            <div id="username-mobile">John Doe</div>
             <i
               class="fa fa-caret-down"
               id="dropdown-mobile"
@@ -90,15 +101,13 @@
             ></i>
           </div>
         </div>
-        <div id="user-options-mobile" class="user-options-mobile">
-          <a href="/api/v1/logout">logout</a>
-        </div>
+        <button id="logout-btn-mobile" class="logout-btn-mobile">logout</button>
         <ul class="mobile-links">
           <li>
-            <a href="/api/v1/products">
+            <a href="products.html">
               <div class="nav-item">
                 <img
-                  src="/svgs/product-service-campaign-item-svgrepo-com.svg"
+                  src="../public/svgs/product-service-campaign-item-svgrepo-com.svg"
                   alt="dashboard logo"
                 />
                 <div>Products</div>
@@ -106,10 +115,10 @@
             </a>
           </li>
           <li>
-            <a href="/api/v1/sales">
+            <a href="sales-page.html">
               <div class="nav-item">
                 <img
-                  src="/svgs/verification-svgrepo-com.svg"
+                  src="../public/svgs/verification-svgrepo-com.svg"
                   alt="dashboard logo"
                 />
                 <div>Sales</div>
@@ -120,7 +129,7 @@
             <a href="#">
               <div class="nav-item">
                 <img
-                  src="/svgs/verification-svgrepo-com.svg"
+                  src="../public/svgs/verification-svgrepo-com.svg"
                   alt="dashboard logo"
                 />
                 <div>Cart</div>
@@ -128,9 +137,12 @@
             </a>
           </li>
           <li>
-            <a href="/api/v1/users">
+            <a href="users-page.html">
               <div class="nav-item">
-                <img src="/svgs/users-svgrepo-com.svg" alt="dashboard logo" />
+                <img
+                  src="../public/svgs/users-svgrepo-com.svg"
+                  alt="dashboard logo"
+                />
                 <div>Users</div>
               </div>
             </a>
@@ -139,13 +151,14 @@
       </div>
       <section id="user-section" class="user-section">
         <div class="create-attendant">
+          <p class="msg"></p>
           <h1>Add Attendant</h1>
-          <form action="/api/v1/users/register" method="post">
+          <form id="create-attendant">
             <div>
               <div class="username-container">
                 <input
                   type="text"
-                  id="username"
+                  id="user-name"
                   name="username"
                   placeholder="username"
                 />
@@ -183,7 +196,7 @@
               </form>
             </div>
             <button class="add-user" id="add-user">
-              <img src="/svgs/plus white.svg" alt="plus-white" />
+              <img src="../public/svgs/plus white.svg" alt="plus-white" />
               Add
             </button>
           </div>
@@ -276,6 +289,12 @@
         </div>
       </section>
     </div>
-    <script src="/script.js"></script>
+    <script src="../public/script.js"></script>
+    <script
+      type="module"
+      src="../public/scripts/users.js
+    "
+    ></script>
+    <script src="../public/scripts/logout.js"></script>
   </body>
 </html>

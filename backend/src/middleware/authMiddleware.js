@@ -19,7 +19,10 @@ const verifyToken = async (req, res, next) => {
         .json({ success: false, message: "No token provided" });
 
     jwt.verify(token, accessKey, (err, user) => {
-      if (err) return res.sendStatus(403);
+      if (err)
+        return res
+          .status(403)
+          .json({ message: "You are not allowed to access this route!" });
       req.user = user;
       next();
     });
@@ -31,7 +34,11 @@ const verifyToken = async (req, res, next) => {
 const isAdmin = async (req, res, next) => {
   try {
     const { role } = req.user;
-    if (role !== "Admin") return res.sendStatus(403);
+    if (role !== "Admin") {
+      return res
+        .status(403)
+        .json({ message: "You are not allowed to access this route!" });
+    }
     next();
   } catch (err) {
     console.log(err);

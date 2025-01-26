@@ -7,24 +7,24 @@ const toggleFunc = (element, className) => {
 };
 
 const dropdown = document.querySelectorAll("#dropdown");
-const userOptions = document.querySelectorAll("#user-options");
+const logoutBtn = document.querySelectorAll("#logout-btn");
 
 dropdown.forEach((element) => {
   element.addEventListener("click", () => {
-    userOptions.forEach((option) => {
-      toggleFunc(option, "user-options-visible");
+    logoutBtn.forEach((btn) => {
+      toggleFunc(btn, "logout-btn-visible");
     });
   });
 });
 
 const dropdownMobile = document.querySelectorAll("#dropdown-mobile");
 
-const userOptionsMobile = document.querySelectorAll("#user-options-mobile");
+const logoutBtnMobile = document.querySelectorAll("#logout-btn-mobile");
 
 dropdownMobile.forEach((element) => {
   element.addEventListener("click", () => {
-    userOptionsMobile.forEach((option) => {
-      toggleFunc(option, "user-options-mobile-visible");
+    logoutBtnMobile.forEach((option) => {
+      toggleFunc(option, "logout-btn-mobile-visible");
     });
   });
 });
@@ -35,9 +35,9 @@ const mobileMenuLinks = document.querySelectorAll(".mobile-menu-links");
 mobileMenu.forEach((menu) => {
   menu.addEventListener("click", () => {
     if (!menu.classList.contains("mobile-menu-open")) {
-      userOptionsMobile.forEach((element) => {
-        if (element.classList.contains("user-options-mobile-visible")) {
-          element.classList.remove("user-options-mobile-visible");
+      logoutBtnMobile.forEach((element) => {
+        if (element.classList.contains("logout-btn-mobile-visible")) {
+          element.classList.remove("logout-btn-mobile-visible");
         }
       });
     }
