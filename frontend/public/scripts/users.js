@@ -1,21 +1,10 @@
-import { getContent } from "./getContent.js";
+import { getContent, getCookieValue } from "./getContent.js";
 const apiUrl = "http://localhost:4000/api/v1/users";
 getContent(apiUrl);
 
 document.addEventListener("DOMContentLoaded", () => {
   const msg = document.querySelector(".msg");
   const createUserForm = document.getElementById("create-attendant");
-  const getCookieValue = (cookieName) => {
-    const cookies = document.cookie.split("; ");
-    for (const cookie of cookies) {
-      const [key, value] = cookie.split("=");
-      if (key === cookieName) {
-        return value;
-      }
-    }
-    return null;
-  };
-
   const accessToken = getCookieValue("accessToken");
 
   const addUser = async (event) => {

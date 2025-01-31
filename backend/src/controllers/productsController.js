@@ -8,6 +8,7 @@ const getProducts = (req, res) => {
 };
 
 const addProduct = (req, res) => {
+  const productsCopy = products.slice();
   const { productName, productDescription, price, stock } = req.body;
   const requiredFields = [
     "productName",
@@ -32,7 +33,7 @@ const addProduct = (req, res) => {
       stock: Number(stock),
       time: new Date().toString(),
     };
-    products.push(newProduct);
+    productsCopy.push(newProduct);
     res.status(200).json({
       success: true,
       message: "product added successfully!",

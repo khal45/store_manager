@@ -1,17 +1,16 @@
-// This function gets the content of the page requested
-
-export const getContent = (apiUrl) => {
-  const getCookieValue = (cookieName) => {
-    const cookies = document.cookie.split("; ");
-    for (const cookie of cookies) {
-      const [key, value] = cookie.split("=");
-      if (key === cookieName) {
-        return value;
-      }
+const getCookieValue = (cookieName) => {
+  const cookies = document.cookie.split("; ");
+  for (const cookie of cookies) {
+    const [key, value] = cookie.split("=");
+    if (key === cookieName) {
+      return value;
     }
-    return null;
-  };
+  }
+  return null;
+};
 
+// This function gets the content of the page requested
+const getContent = (apiUrl) => {
   const accessToken = getCookieValue("accessToken");
 
   if (!accessToken) {
@@ -27,20 +26,18 @@ export const getContent = (apiUrl) => {
         window.open("login.html", "_self");
         return;
       } else {
-        const userRes = await fetch(
-          "http://localhost:4000/api/v1/users/currentUser",
-          { headers: { Authorization: `Bearer ${accessToken}` } }
-        );
-
-        const username = await userRes.json();
+        const payload = JSON.parse(atob(accessToken.split(".")[1]));
+        const username = payload.username;
         const usernameMobile = document.getElementById("username-mobile");
         const usernameDesktop = document.getElementById("username");
+        const welcomeMsg = document.getElementById("welcome-msg");
 
         const updateUsername = (element) => {
           element.innerHTML = username;
         };
         if (usernameMobile) updateUsername(usernameMobile);
         if (usernameDesktop) updateUsername(usernameDesktop);
+        if (welcomeMsg) welcomeMsg.textContent = `Welcome ${username}!`;
       }
     } catch (error) {
       console.error(error);
@@ -48,3 +45,5 @@ export const getContent = (apiUrl) => {
   };
   verifyToken();
 };
+
+export { getCookieValue, getContent };
