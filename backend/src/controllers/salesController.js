@@ -76,7 +76,13 @@ const createSale = (req, res) => {
     };
 
     sales.push(newOrder);
-    res.json(newOrder);
+    res
+      .status(200)
+      .json({
+        success: true,
+        message: "Sale record created successfully!",
+        newOrder,
+      });
   }
 };
 

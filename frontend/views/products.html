@@ -20,7 +20,7 @@
       <header>
         <div class="nav-container">
           <nav>
-            <a href="/api/v1/products">
+            <a href="products.html">
               <div class="logo">
                 <img
                   src="../public/svgs/shop-store-svgrepo-com.svg"
@@ -36,7 +36,7 @@
             </a>
             <ul class="desktop-links">
               <li>
-                <a href="/api/v1/products"
+                <a href="products.html"
                   ><img
                     src="../public/svgs/product-service-campaign-item-svgrepo-com.svg"
                     alt="dashboard logo"
@@ -45,7 +45,7 @@
                 </a>
               </li>
               <li>
-                <a href="/api/v1/sales"
+                <a href="sales-page.html"
                   ><img
                     src="../public/svgs/verification-svgrepo-com.svg"
                     alt="dashboard logo"
@@ -63,7 +63,7 @@
                 </a>
               </li>
               <li>
-                <a href="/api/v1/users"
+                <a href="users-page.html"
                   ><img
                     src="../public/svgs/users-svgrepo-com.svg"
                     alt="dashboard logo"
@@ -77,12 +77,12 @@
                 src="https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png"
                 alt="user-image"
               />
-              <a href="#" class="username"><div id="username">John Doe</div></a>
+              <a href="#" class="username"><div id="username"></div></a>
               <i class="fa fa-caret-down" id="dropdown" aria-hidden="true"></i>
             </div>
-            <div id="user-options" class="user-options user-options-hidden">
-              <a href="/api/v1/logout">logout</a>
-            </div>
+            <button id="logout-btn" class="logout-btn logout-btn-hidden">
+              logout
+            </button>
           </nav>
         </div>
       </header>
@@ -93,7 +93,7 @@
             alt="user-image-mobile"
           />
           <div class="user-div">
-            <div id="username">John Doe</div>
+            <div id="username-mobile"></div>
             <i
               class="fa fa-caret-down"
               id="dropdown-mobile"
@@ -101,12 +101,10 @@
             ></i>
           </div>
         </div>
-        <div id="user-options-mobile" class="user-options-mobile">
-          <a href="/api/v1/logout">logout</a>
-        </div>
+        <button id="logout-btn-mobile" class="logout-btn-mobile">logout</button>
         <ul class="mobile-links">
           <li>
-            <a href="/api/v1/products">
+            <a href="products.html">
               <div class="nav-item">
                 <img
                   src="../public/svgs/product-service-campaign-item-svgrepo-com.svg"
@@ -117,7 +115,7 @@
             </a>
           </li>
           <li>
-            <a href="/api/v1/sales">
+            <a href="sales-page.html">
               <div class="nav-item">
                 <img
                   src="../public/svgs/verification-svgrepo-com.svg"
@@ -139,7 +137,7 @@
             </a>
           </li>
           <li>
-            <a href="/api/v1/users">
+            <a href="users-page.html">
               <div class="nav-item">
                 <img
                   src="../public/svgs/users-svgrepo-com.svg"
@@ -194,17 +192,18 @@
           </div>
           <div class="create-product-wrapper">
             <div class="create-product-container" id="create-product-container">
+              <p class="msg"></p>
               <button class="close-window" id="close-window">
                 <img
                   src="../public/svgs/multiply-svgrepo-com.svg"
                   alt="multiply-svgrepo-com"
                 />
               </button>
-              <form action="/api/v1/products" method="post">
+              <form id="create-form">
                 <div class="create-form">
                   <input
                     type="text"
-                    id="create-input-desktop"
+                    id="product-name"
                     name="productName"
                     class="mobile-input"
                     placeholder="Product Name"
@@ -251,7 +250,7 @@
           </div>
           <div class="products-display-container">
             <div class="products-display">
-              <a href="/api/v1/products/product-details" class="item-anchor">
+              <a href="product-details-page.html" class="item-anchor">
                 <div class="item">
                   <div class="img-div">
                     <img src="../public/images/Nike shoe.jpg" alt="nike shoe" />
@@ -300,7 +299,7 @@
                   </div>
                 </div>
               </a>
-              <a href="/api/v1/products/product-details" class="item-anchor">
+              <a href="product-details-page.html" class="item-anchor">
                 <div class="item">
                   <div class="img-div">
                     <img src="../public/images/Nike shoe.jpg" alt="nike shoe" />
@@ -349,7 +348,7 @@
                   </div>
                 </div>
               </a>
-              <a href="/api/v1/products/product-details" class="item-anchor">
+              <a href="product-details-page.html" class="item-anchor">
                 <div class="item">
                   <div class="img-div">
                     <img src="../public/images/Nike shoe.jpg" alt="nike shoe" />
@@ -398,7 +397,7 @@
                   </div>
                 </div>
               </a>
-              <a href="/api/v1/products/product-details" class="item-anchor">
+              <a href="product-details-page.html" class="item-anchor">
                 <div class="item">
                   <div class="img-div">
                     <img src="../public/images/Nike shoe.jpg" alt="nike shoe" />
@@ -447,7 +446,7 @@
                   </div>
                 </div>
               </a>
-              <a href="/api/v1/products/product-details" class="item-anchor">
+              <a href="product-details-page.html" class="item-anchor">
                 <div class="item">
                   <div class="img-div">
                     <img src="../public/images/Nike shoe.jpg" alt="nike shoe" />
@@ -496,7 +495,7 @@
                   </div>
                 </div>
               </a>
-              <a href="/api/v1/products/product-details" class="item-anchor">
+              <a href="product-details-page.html" class="item-anchor">
                 <div class="item">
                   <div class="img-div">
                     <img src="../public/images/Nike shoe.jpg" alt="nike shoe" />
@@ -545,7 +544,7 @@
                   </div>
                 </div>
               </a>
-              <a href="/api/v1/products/product-details" class="item-anchor">
+              <a href="product-details-page.html" class="item-anchor">
                 <div class="item">
                   <div class="img-div">
                     <img src="../public/images/Nike shoe.jpg" alt="nike shoe" />
@@ -594,7 +593,7 @@
                   </div>
                 </div>
               </a>
-              <a href="/api/v1/products/product-details" class="item-anchor">
+              <a href="product-details-page.html" class="item-anchor">
                 <div class="item">
                   <div class="img-div">
                     <img src="../public/images/Nike shoe.jpg" alt="nike shoe" />
@@ -643,7 +642,7 @@
                   </div>
                 </div>
               </a>
-              <a href="/api/v1/products/product-details" class="item-anchor">
+              <a href="product-details-page.html" class="item-anchor">
                 <div class="item">
                   <div class="img-div">
                     <img src="../public/images/Nike shoe.jpg" alt="nike shoe" />
@@ -692,7 +691,7 @@
                   </div>
                 </div>
               </a>
-              <a href="/api/v1/products/product-details" class="item-anchor">
+              <a href="product-details-page.html" class="item-anchor">
                 <div class="item">
                   <div class="img-div">
                     <img src="../public/images/Nike shoe.jpg" alt="nike shoe" />
@@ -741,7 +740,7 @@
                   </div>
                 </div>
               </a>
-              <a href="/api/v1/products/product-details" class="item-anchor">
+              <a href="product-details-page.html" class="item-anchor">
                 <div class="item">
                   <div class="img-div">
                     <img src="../public/images/Nike shoe.jpg" alt="nike shoe" />
@@ -790,7 +789,7 @@
                   </div>
                 </div>
               </a>
-              <a href="/api/v1/products/product-details" class="item-anchor">
+              <a href="product-details-page.html" class="item-anchor">
                 <div class="item">
                   <div class="img-div">
                     <img src="../public/images/Nike shoe.jpg" alt="nike shoe" />
@@ -839,7 +838,7 @@
                   </div>
                 </div>
               </a>
-              <a href="/api/v1/products/product-details" class="item-anchor">
+              <a href="product-details-page.html" class="item-anchor">
                 <div class="item">
                   <div class="img-div">
                     <img src="../public/images/Nike shoe.jpg" alt="nike shoe" />
@@ -888,7 +887,7 @@
                   </div>
                 </div>
               </a>
-              <a href="/api/v1/products/product-details" class="item-anchor">
+              <a href="product-details-page.html" class="item-anchor">
                 <div class="item">
                   <div class="img-div">
                     <img src="../public/images/Nike shoe.jpg" alt="nike shoe" />
@@ -944,6 +943,7 @@
       </section>
     </div>
     <script src="../public/script.js"></script>
-    <script src="../public/scripts/products.js"></script>
+    <script type="module" src="../public/scripts/products.js"></script>
+    <script src="../public/scripts/logout.js"></script>
   </body>
 </html>

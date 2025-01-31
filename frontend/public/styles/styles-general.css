@@ -135,11 +135,12 @@ nav a {
   cursor: pointer;
 }
 
-.user-options {
+.logout-btn {
   width: 6vw;
   height: 30px;
   background-color: var(--content-black);
   color: var(--pure-white);
+  cursor: pointer;
   border-radius: 5px;
   margin-left: 71vw;
   margin-top: 45px;
@@ -151,12 +152,12 @@ nav a {
   z-index: 1;
 }
 
-.user-options a {
+.logout-btn a {
   color: var(--pure-white);
   text-decoration: none;
 }
 
-.user-options-visible {
+.logout-btn-visible {
   animation: fade-in 600ms ease-in-out 300ms forwards;
 }
 
@@ -268,7 +269,7 @@ nav a {
   color: var(--content-black);
 }
 
-.user-options-mobile {
+.logout-btn-mobile {
   width: 20vw;
   height: 30px;
   background-color: var(--content-black);
@@ -286,12 +287,12 @@ nav a {
   z-index: 4;
 }
 
-.user-options-mobile a {
+.logout-btn-mobile a {
   color: var(--pure-white);
   text-decoration: none;
 }
 
-.user-options-mobile-visible {
+.logout-btn-mobile-visible {
   animation: fade-in 600ms ease-in-out 300ms forwards;
 }
 
@@ -341,7 +342,7 @@ nav a {
     display: none;
   }
 
-  .user-options {
+  .logout-btn {
     display: none;
   }
 

@@ -1,4 +1,4 @@
-.user-options-mobile {
+.logout-btn-mobile {
   top: 8% !important;
 }
 
@@ -586,6 +586,19 @@
   padding-top: 1%;
   padding-bottom: 2%;
   background-color: var(--pure-white);
+}
+
+.msg {
+  display: flex;
+  justify-content: center;
+}
+
+.msg-success {
+  color: #00ff00;
+}
+
+.msg-failure {
+  color: #ff0000;
 }
 
 .input-div {
