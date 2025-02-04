@@ -80,9 +80,10 @@ const openFunc = (btn, element) => {
   });
 };
 
-const closeFunc = (btn, element) => {
+const closeFunc = (btn, element, form) => {
   btn.addEventListener("click", () => {
     element.classList.remove("open-container");
+    form.reset();
   });
 };
 
@@ -92,11 +93,12 @@ const closeWindow = document.getElementById("close-window");
 const createProductContainer = document.getElementById(
   "create-product-container"
 );
+const createForm = document.getElementById("create-form");
 
 if (addBtn) {
   openFunc(addBtn, createProductContainer);
   openFunc(addProduct, createProductContainer);
-  closeFunc(closeWindow, createProductContainer);
+  closeFunc(closeWindow, createProductContainer, createForm);
 }
 
 const deleteBtn = document.querySelectorAll("#delete-btn");
@@ -126,8 +128,9 @@ if (editBtn) {
 const createRecord = document.getElementById("create-record");
 const createRecordDiv = document.getElementById("create-record-div");
 const closeSale = document.getElementById("close-sale");
+const createRecordForm = document.getElementById("create-record-form");
 
 if (createRecord) {
   openFunc(createRecord, createRecordDiv);
-  closeFunc(closeSale, createRecordDiv);
+  closeFunc(closeSale, createRecordDiv, createRecordForm);
 }

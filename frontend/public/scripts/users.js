@@ -31,27 +31,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
       if (!response.ok) {
         msg.textContent = data.message || "An error occured try again!";
-        if (msg.classList.contains("msg-success")) {
-          msg.classList.remove("msg-success");
-          msg.classList.toggle("msg-failure");
-        } else if (msg.classList.contains("msg-failure")) {
-          return;
-        } else {
-          msg.classList.toggle("msg-failure");
-        }
+        msg.classList.remove("msg-success");
+        msg.classList.add("msg-failure");
         return;
       }
 
       if (data.success) {
         msg.textContent = data.message || "Operation successful!";
-        if (msg.classList.contains("msg-failure")) {
-          msg.classList.remove("msg-failure");
-          msg.classList.toggle("msg-success");
-        } else if (msg.classList.contains("msg-success")) {
-          return;
-        } else {
-          msg.classList.toggle("msg-success");
-        }
+        msg.classList.remove("msg-failure");
+        msg.classList.add("msg-success");
         return;
       }
     } catch (error) {
