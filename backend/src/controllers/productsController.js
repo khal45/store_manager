@@ -4,7 +4,7 @@ import products from "../database/productsDb.js";
 const uniqueId = uuidv4();
 
 const getProducts = (req, res) => {
-  res.json(products);
+  res.status(200).json({ success: true, products });
 };
 
 const addProduct = (req, res) => {
@@ -47,9 +47,11 @@ const getProductById = (req, res) => {
   const foundProduct = products.find((product) => product.id === id);
 
   if (!foundProduct) {
-    return res.status(404).json({ message: "Product not found" });
+    return res
+      .status(404)
+      .json({ success: false, message: "Product not found!" });
   } else {
-    res.json(foundProduct);
+    return res.status(200).json({ success: true, foundProduct });
   }
 };
 
