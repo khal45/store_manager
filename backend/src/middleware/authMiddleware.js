@@ -22,7 +22,7 @@ const verifyToken = async (req, res, next) => {
       if (err)
         return res
           .status(403)
-          .json({ message: "You are not allowed to access this route!" });
+          .json({ success: false, message: "You are not allowed to access this route!" });
       req.user = user;
       next();
     });
@@ -37,7 +37,7 @@ const isAdmin = async (req, res, next) => {
     if (role !== "Admin") {
       return res
         .status(403)
-        .json({ message: "You are not allowed to access this route!" });
+        .json({ success: false, message: "You are not allowed to access this route!" });
     }
     next();
   } catch (err) {

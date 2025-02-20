@@ -30,6 +30,7 @@ app.use("/api/v1/users", userRouter);
 app.use("/api/v1/sales", salesRouter);
 
 // start the server
-app.listen(port, () => {
+const server = app.listen(port, () => {
   console.log(`Your app is listening on port ${port}`);
 });
+export default server;
