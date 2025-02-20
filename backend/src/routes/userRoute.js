@@ -1,11 +1,6 @@
 import "../middleware/authMiddleware.js";
 import { verifyToken, isAdmin } from "../middleware/authMiddleware.js";
-import {
-  getUser,
-  createUser,
-  // getUserDb,
-} from "../controllers/userController.js";
-import { getAttendantSales } from "../controllers/salesController.js";
+import { getUser, createUser } from "../controllers/userController.js";
 import express from "express";
 import { fileURLToPath } from "url";
 import path from "path";
@@ -22,7 +17,6 @@ userRouter.use(bodyParser.json());
 userRouter.use(bodyParser.urlencoded({ extended: true }));
 
 userRouter.get("/", verifyToken, isAdmin, getUser);
-// userRouter.get("/sales/:attendantId", verifyToken, getAttendantSales);
 userRouter.post("/register", verifyToken, isAdmin, createUser);
 
 export default userRouter;

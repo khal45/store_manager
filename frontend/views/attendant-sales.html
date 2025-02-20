@@ -3,18 +3,29 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" type="text/css" href="/styles/styles-general.css" />
-    <link rel="stylesheet" type="text/css" href="/styles/sales-styles.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../public/styles/styles-general.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../public/styles/sales-styles.css"
+    />
     <title>Sales Page</title>
   </head>
   <body>
-    <div id="sales-page" class="sales-page">
+    <div id="attendant-sales-page" class="sales-page">
       <header>
         <div class="nav-container">
           <nav>
-            <a href="/api/v1/products">
+            <a href="products.html">
               <div class="logo">
-                <img src="/svgs/shop-store-svgrepo-com.svg" alt="svg logo" />
+                <img
+                  src="../public/svgs/shop-store-svgrepo-com.svg"
+                  alt="svg logo"
+                />
                 <div class="text">Store Manager</div>
               </div>
             </a>
@@ -25,18 +36,18 @@
             </a>
             <ul class="desktop-links">
               <li>
-                <a href="/api/v1/products"
+                <a href="products.html"
                   ><img
-                    src="/svgs/product-service-campaign-item-svgrepo-com.svg"
+                    src="../public/svgs/product-service-campaign-item-svgrepo-com.svg"
                     alt="dashboard logo"
                   />
                   <div>Products</div>
                 </a>
               </li>
               <li>
-                <a href="/api/v1/sales"
+                <a href="sales-page.html"
                   ><img
-                    src="/svgs/verification-svgrepo-com.svg"
+                    src="../public/svgs/verification-svgrepo-com.svg"
                     alt="dashboard logo"
                   />
                   <div>Sales</div>
@@ -45,16 +56,16 @@
               <li>
                 <a href="#"
                   ><img
-                    src="/svgs/verification-svgrepo-com.svg"
+                    src="../public/svgs/verification-svgrepo-com.svg"
                     alt="dashboard logo"
                   />
                   <div>Cart</div>
                 </a>
               </li>
               <li>
-                <a href="/api/v1/users"
+                <a href="users-page.html"
                   ><img
-                    src="/svgs/users-svgrepo-com.svg"
+                    src="../public/svgs/users-svgrepo-com.svg"
                     alt="dashboard logo"
                   />
                   <div>Users</div>
@@ -69,9 +80,9 @@
               <a href="#" class="username"><div id="username"></div></a>
               <i class="fa fa-caret-down" id="dropdown" aria-hidden="true"></i>
             </div>
-            <div id="user-options" class="user-options user-options-hidden">
-              <a href="/api/v1/logout">logout</a>
-            </div>
+            <button id="logout-btn" class="logout-btn logout-btn-hidden">
+              logout
+            </button>
           </nav>
         </div>
       </header>
@@ -170,9 +181,7 @@
                 <div class="div-2">
                   <div class="div-3">
                     <div class="items">
-                      <a
-                        href="/api/v1/sales/f7c6b24a-e0bc-422b-8d24-aa00a88dafc4"
-                        id="sale-link"
+                      <a href="sale-details.html" id="sale-link"
                         ><p class="more-info">Nike Dunk High</p></a
                       >
                       <a
@@ -315,6 +324,7 @@
         </div>
       </section>
     </div>
-    <script src="/script.js"></script>
+    <script src="../public/script.js"></script>
+    <script src="../public/scripts/logout.js"></script>
   </body>
 </html>

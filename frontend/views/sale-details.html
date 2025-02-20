@@ -3,17 +3,28 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" type="text/css" href="/styles/styles-general.css" />
-    <link rel="stylesheet" type="text/css" href="/styles/sales-styles.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../public/styles/styles-general.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../public/styles/sales-styles.css"
+    />
     <title>Sale Detail</title>
   </head>
   <body>
     <header>
       <div class="nav-container">
         <nav>
-          <a href="/products">
+          <a href="products.html">
             <div class="logo">
-              <img src="/svgs/shop-store-svgrepo-com.svg" alt="svg logo" />
+              <img
+                src="../public/svgs/shop-store-svgrepo-com.svg"
+                alt="svg logo"
+              />
               <div class="text">Store Manager</div>
             </div>
           </a>
@@ -24,18 +35,18 @@
           </a>
           <ul class="desktop-links">
             <li>
-              <a href="/products"
+              <a href="products.html"
                 ><img
-                  src="/svgs/product-service-campaign-item-svgrepo-com.svg"
+                  src="../public/svgs/product-service-campaign-item-svgrepo-com.svg"
                   alt="dashboard logo"
                 />
                 <div>Products</div>
               </a>
             </li>
             <li>
-              <a href="/api/v1/sales"
+              <a href="sales-page.html"
                 ><img
-                  src="/svgs/verification-svgrepo-com.svg"
+                  src="../public/svgs/verification-svgrepo-com.svg"
                   alt="dashboard logo"
                 />
                 <div>Sales</div>
@@ -44,15 +55,18 @@
             <li>
               <a href="#"
                 ><img
-                  src="/svgs/verification-svgrepo-com.svg"
+                  src="../public/svgs/verification-svgrepo-com.svg"
                   alt="dashboard logo"
                 />
                 <div>Cart</div>
               </a>
             </li>
             <li>
-              <a href="/api/v1/users"
-                ><img src="/svgs/users-svgrepo-com.svg" alt="dashboard logo" />
+              <a href="users-page.html"
+                ><img
+                  src="../public/svgs/users-svgrepo-com.svg"
+                  alt="dashboard logo"
+                />
                 <div>Users</div>
               </a>
             </li>
@@ -62,12 +76,12 @@
               src="https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png"
               alt="user-image"
             />
-            <div id="username"></div>
+            <a href="#" class="username"><div id="username"></div></a>
             <i class="fa fa-caret-down" id="dropdown" aria-hidden="true"></i>
           </div>
-          <div id="user-options" class="user-options user-options-hidden">
-            <a href="login.html">logout</a>
-          </div>
+          <button id="logout-btn" class="logout-btn logout-btn-hidden">
+            logout
+          </button>
         </nav>
       </div>
     </header>
@@ -158,5 +172,7 @@
       </div>
     </div>
     <script src="../public/script.js"></script>
+    <script src="../public/scripts/logout.js"></script>
+    <script type="module" src="../public/scripts/sales.js"></script>
   </body>
 </html>

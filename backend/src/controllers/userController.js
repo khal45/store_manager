@@ -16,7 +16,7 @@ const createUser = (req, res) => {
   const requiredFields = ["username", "password", "role"];
   const missingFields = requiredFields.filter((field) => !req.body[field]);
 
-  const userExists = users.find((user) => user.username === username);
+  const userExists = usersCopy.find((user) => user.username === username);
 
   if (missingFields.length > 0) {
     res.status(400).json({
