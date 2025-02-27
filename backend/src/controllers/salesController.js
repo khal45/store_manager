@@ -1,29 +1,9 @@
 import sales from "../database/saleDb.js";
-import users from "../database/usersDb.js";
 import { v4 as uuidv4 } from "uuid";
 const uniqueId = uuidv4();
 
 const getAllSales = (req, res) => {
-  res.status(200).json(sales);
-};
-
-const getAttendantSales = (req, res) => {
-  const { attendantId } = req.params;
-  const foundUser = users.find((user) => user.id === attendantId);
-  if (!foundUser) {
-    return res.status(404).json({ message: "Attendant not found" });
-  } else {
-    if (foundUser.role === "Admin") {
-      return res
-        .status(400)
-        .json({ message: "Admin cannot have sale records!" });
-    } else {
-      const attendantSales = sales.filter(
-        (sale) => sale.attendantId === attendantId
-      );
-      res.status(200).json(attendantSales);
-    }
-  }
+  res.status(200).json({ success: true, sales });
 };
 
 const getSaleById = (req, res) => {
@@ -31,17 +11,18 @@ const getSaleById = (req, res) => {
   const foundSaleRecord = sales.find((sale) => sale.saleId === saleId);
   const attendantId = req.user.id;
   if (!foundSaleRecord) {
-    res.status(404).json({ message: "Sale Record not found!" });
+    res.status(404).json({ success: false, message: "Sale Record not found!" });
   } else {
     if (
       attendantId === foundSaleRecord.attendantId ||
       req.user.role === "Admin"
     ) {
-      res.json(foundSaleRecord);
+      res.status(200).json({ success: true, foundSaleRecord });
     } else {
-      res
-        .status(403)
-        .json({ message: "Attendant does not have access to sale record" });
+      res.status(403).json({
+        success: false,
+        message: "Attendant does not have access to sale record!",
+      });
     }
   }
 };
@@ -58,9 +39,9 @@ const createSale = (req, res) => {
   const missingFields = requiredFields.filter((field) => !req.body[field]);
 
   if (missingFields.length > 0) {
-    res.status(422).json({
+    res.status(400).json({
       success: false,
-      message: "All fields are required",
+      message: "All fields are required!",
     });
   } else {
     let newOrder = {
@@ -76,14 +57,12 @@ const createSale = (req, res) => {
     };
 
     sales.push(newOrder);
-    res
-      .status(200)
-      .json({
-        success: true,
-        message: "Sale record created successfully!",
-        newOrder,
-      });
+    res.status(200).json({
+      success: true,
+      message: "Sale record created successfully!",
+      newOrder,
+    });
   }
 };
 
-export { getAllSales, getAttendantSales, createSale, getSaleById };
+export { getAllSales, createSale, getSaleById };

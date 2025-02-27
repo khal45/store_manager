@@ -14,3 +14,4 @@ To run this project locally:
 8. Navigate to the usersDb.js file for the usernames of the users.
 9. Change all `http://localhost:4000` in the frontend scripts to your localhost url accordingly.
 10. The password of each user is in the format: `username@role` eg johndoe's password is: `johndoe@admin`.
+11. Run "npm test" to run the test.

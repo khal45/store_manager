@@ -6,7 +6,7 @@ const uniqueId = uuidv4();
 const usersRes = users.map(({ password, ...rest }) => rest);
 
 const getUser = (req, res) => {
-  res.json(usersRes);
+  res.status(200).json({ success: true, usersRes });
 };
 
 const createUser = (req, res) => {
@@ -37,7 +37,7 @@ const createUser = (req, res) => {
         role: role,
         password: hashedPassword,
       };
-      usersCopy.push(newUser);
+      users.push(newUser);
       res.status(200).json({
         success: true,
         message: "User added successfully!",
