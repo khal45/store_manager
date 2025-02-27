@@ -40,6 +40,7 @@ describe("auth route tests", () => {
         .get("/api/v1/sales")
         .set("Authorization", `Bearer ${adminToken}`)
         .end((error, res) => {
+          if (error) return done(error);
           assert.equal(res.status, 200);
           assert.equal(res.type, "application/json");
           assert.equal(res.body.success, true);
@@ -54,6 +55,7 @@ describe("auth route tests", () => {
         .get(`/api/v1/sales/${saleId}`)
         .set("Authorization", `Bearer ${adminToken}`)
         .end((error, res) => {
+          if (error) return done(error);
           assert.equal(res.status, 200);
           assert.equal(res.body.success, true);
           done();
@@ -67,6 +69,7 @@ describe("auth route tests", () => {
         .get(`/api/v1/sales/invalid_id`)
         .set("Authorization", `Bearer ${adminToken}`)
         .end((error, res) => {
+          if (error) return done(error);
           assert.equal(res.status, 404);
           assert.equal(res.body.success, false);
           assert.equal(res.body.message, "Sale Record not found!");
@@ -81,6 +84,7 @@ describe("auth route tests", () => {
         .get(`/api/v1/sales/${saleId}`)
         .set("Authorization", `Bearer ${attendantToken}`)
         .end((error, res) => {
+          if (error) return done(error);
           assert.equal(res.status, 403);
           assert.equal(res.body.success, false);
           assert.equal(
@@ -107,6 +111,7 @@ describe("auth route tests", () => {
           status: "completed",
         })
         .end((error, res) => {
+          if (error) return done(error);
           assert.equal(res.status, 200);
           assert.equal(res.body.success, true);
           assert.equal(res.body.message, "Sale record created successfully!");
@@ -121,6 +126,7 @@ describe("auth route tests", () => {
         .post("/api/v1/sales")
         .set("Authorization", `Bearer ${attendantToken}`)
         .end((error, res) => {
+          if (error) return done(error);
           assert.equal(res.status, 400);
           assert.equal(res.body.success, false);
           assert.equal(res.body.message, "All fields are required!");

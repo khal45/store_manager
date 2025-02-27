@@ -37,7 +37,7 @@ const createUser = (req, res) => {
         role: role,
         password: hashedPassword,
       };
-      usersCopy.push(newUser);
+      users.push(newUser);
       res.status(200).json({
         success: true,
         message: "User added successfully!",

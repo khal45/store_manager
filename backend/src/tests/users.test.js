@@ -5,9 +5,6 @@ import server from "../../server.js";
 let attendantToken, adminToken;
 const userId = "9160047";
 
-// create before tests hook
-// test endpoint and functionality in the route
-
 describe("user route testst", () => {
   before((done) => {
     request
@@ -64,6 +61,7 @@ describe("user route testst", () => {
           role: "attendant",
         })
         .end((error, res) => {
+          if (error) return done(error);
           assert.equal(res.status, 200);
           assert.equal(res.body.success, true);
           assert.equal(res.body.message, "User added successfully!");
@@ -78,6 +76,7 @@ describe("user route testst", () => {
         .post("/api/v1/users/register")
         .set("Authorization", `Bearer ${adminToken}`)
         .end((error, res) => {
+          if (error) return done(error);
           assert.equal(res.status, 400);
           assert.equal(res.body.success, false);
           assert.equal(res.body.message, "All fields are required!");
@@ -97,6 +96,7 @@ describe("user route testst", () => {
           role: "admin",
         })
         .end((error, res) => {
+          if (error) return done(error);
           assert.equal(res.status, 409);
           assert.equal(res.body.success, false);
           assert.equal(res.body.message, "User already exists!");
