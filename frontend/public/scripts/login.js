@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const oneDay = 60 * 60 * 24;
         const token = data.accessToken;
         document.cookie = `accessToken=${token}; path=/; max-age=${oneDay}; secure; samesite=strict;`;
-        window.open("products.html", "_self");
+        window.open("./views/products.html", "_self");
       }
     } catch (error) {
       console.error("Fetch error:", error);
