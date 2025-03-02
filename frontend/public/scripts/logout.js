@@ -6,7 +6,7 @@ const logoutFunc = (logoutButton) => {
     btn.addEventListener("click", () => {
       document.cookie =
         "accessToken=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
-      window.open("login.html", "_self");
+      window.open("../index.html", "_self");
       return;
     });
   });

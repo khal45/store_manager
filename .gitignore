@@ -3,3 +3,4 @@ node_modules/
 backend/src/logic.js
 **/output.txt
 .env
+algorithim.js
